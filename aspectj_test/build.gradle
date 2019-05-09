@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+buildscript {
+    repositories {
+        mavenCentral()
+        google()
+        maven {
+            url uri('../repo')
+        }
+    }
+    dependencies {
+        classpath 'com.zeus.aspectj.plugin:aspectj_plugin:1.0.0-SNAPSHORT'
+    }
+}
+
+apply plugin: 'aspectj_plugin'
+
+
+android {
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        applicationId "com.zeus.aspectj"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+}
+
+
+

@@ -1,1 +1,1 @@
-include ':app', ':rxjava'
+include ':app', ':rxjava', ':lambda', ':annotation', ':aspectj_test', ':aspectj_plugin'

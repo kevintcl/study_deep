@@ -1,0 +1,45 @@
+apply plugin: 'groovy'
+
+apply plugin: 'maven'
+
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.aspectj:aspectjtools:1.9.3'
+        classpath 'org.aspectj:aspectjweaver:1.9.3'
+    }
+}
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.tools.build:gradle:3.4.0'
+    implementation 'org.aspectj:aspectjrt:1.9.3'
+    implementation 'org.aspectj:aspectjtools:1.9.3'
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
+
+
+repositories {
+    mavenCentral()
+}
+
+group='com.zeus.aspectj.plugin'
+version='1.0.0-SNAPSHORT'
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('../repo'))
+        }
+    }
+}
