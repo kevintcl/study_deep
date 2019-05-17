@@ -22,7 +22,7 @@ public class AspectjPlugin implements Plugin<Project> {
             println 'hello, world!'
         }
 
-
+//        project.plugins.hasPlugin()
         def hasApp = project.plugins.withType(AppPlugin)
         def hasLib = project.plugins.withType(LibraryPlugin)
         if (!hasApp && !hasLib) {
@@ -78,6 +78,17 @@ public class AspectjPlugin implements Plugin<Project> {
             //          /Users/tangchunlin/Library/Android/sdk/platforms/android-28/android.jar
             //          :/Users/tangchunlin/Library/Android/sdk/build-tools/28.0.3/core-lambda-stubs.jar]
 
+            /**
+             * AspectJ常规配置不支持AAR或者JAR切入的，只会对编译的代码进行织入，
+             * AspectJX插件配置支持AAR, JAR及Kotlin的应用。这里需要注意的，
+             * 在AspectJ常规配置中有这样的代码：
+             * "-inpath", javaCompile.destinationDir.toString()，
+             * 代表只对源文件进行织入。
+             * 在查看Aspectjx源码时，发现在“-inputs”配置加入了.jar文件，
+             * 使得class类可以被织入代码。这么理解来看，AspectJ也是支持对class文件的织入的，
+             * 只是需要对它进行相关的配置，而配置比较繁琐，所以诞生了AspectJx等插件。
+             *
+             */
             javaCompile.doLast {
                 String[] args = [
                         "-showWeaveInfo",

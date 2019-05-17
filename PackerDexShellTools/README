@@ -1,0 +1,9 @@
+
+
+tangchunlin@TMBP study_deep (master) $ java PackerDexShellTools/build/libs/PackerDexShellTools.jar
+
+错误: 找不到或无法加载主类 PackerDexShellTools.build.libs.PackerDexShellTools.jar
+
+tangchunlin@TMBP study_deep (master) $ java -cp  PackerDexShellTools/build/libs/PackerDexShellTools.jar  com.zeus.packerdexshelltools.ShellTool
+Hello World!
+APK不存在

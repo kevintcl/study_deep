@@ -1,0 +1,91 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        applicationId "com.zeus.proguard"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+
+    }
+
+    signingConfigs {
+
+        test {
+            storeFile file("${projectDir}/zeus_test.key")
+            storePassword "test123"
+            keyAlias "zeus"
+            keyPassword "test123"
+//            v2SigningEnabled false
+        }
+
+        release {
+            storeFile file("${projectDir}/zeus_test.key")
+            storePassword "test123"
+            keyAlias "zeus"
+            keyPassword "test123"
+//            v2SigningEnabled false
+        }
+    }
+
+    /**
+     * ProGuard的三大作用
+     * 压缩（Shrinking）：移除未被使用的类、属性、方法等，并且会在优化动作执行之后再次执行（因为优化后可能会再次暴露一些未被使用的类和成员。
+     * 优化（Optimization）： 优化字节码，并删除未使用的结构。
+     * 混淆（Obfuscation）：将类名、属性名、方法名混淆为难以读懂的字母，比如a,b,c等，增大反编译难度。
+    */
+    buildTypes {
+        debug {
+            debuggable true
+
+//            minifyEnabled false
+//            minifyEnabled true
+//            shrinkResources true
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.test
+
+        }
+        release {
+
+            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
+            //proguard-android-optimize.txt 位于 sdk/tools/proguard 目录下
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            signingConfig signingConfigs.release
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            if (variant.getBuildType().isMinifyEnabled()) {
+                variant.getAssembleProvider().configure() {
+                    it.doLast {
+                        copy {
+                            from variant.mappingFile
+                            into "${projectDir}/mappings"
+                            rename { String fileName ->
+                                "mapping-${variant.name}.txt"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+}

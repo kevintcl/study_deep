@@ -1,1 +1,1 @@
-include ':app', ':rxjava', ':lambda', ':annotation', ':aspectj_test', ':aspectj_plugin'
+include ':app', ':rxjava', ':lambda', ':annotation', ':aspectj_test', ':aspectj_plugin', ':packer_source_apk', ':PackerDexShellTools', ':packer_parse_apk', ':hook_ams', ':proguard_demo'
