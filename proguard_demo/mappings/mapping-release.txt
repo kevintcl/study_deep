@@ -1,5 +1,5 @@
 # compiler: R8
-# compiler_version: 1.4.77
+# compiler_version: 1.4.94
 # min_api: 21
 androidx.appcompat.R$attr -> a.a.a:
 androidx.appcompat.R$bool -> a.a.b:
@@ -1059,7 +1059,6 @@ androidx.appcompat.app.ResourcesFlusher -> a.a.a.C:
     117:117:java.util.List androidx.core.content.res.FontResourcesParserCompat.readCerts(android.content.res.Resources,int):0 -> a
     118:118:java.util.List androidx.core.content.res.FontResourcesParserCompat.readCerts(android.content.res.Resources,int):0:0 -> a
     int androidx.constraintlayout.solver.widgets.Analyzer.resolveDimensionRatio(androidx.constraintlayout.solver.widgets.ConstraintWidget) -> a
-    void androidx.core.view.LayoutInflaterCompat.setFactory2(android.view.LayoutInflater,android.view.LayoutInflater$Factory2) -> a
     void androidx.core.widget.TextViewCompat.setFirstBaselineToTopHeight(android.widget.TextView,int) -> a
     void androidx.core.widget.PopupWindowCompat.setOverlapAnchor(android.widget.PopupWindow,boolean) -> a
     119:119:void androidx.constraintlayout.solver.widgets.Analyzer.updateSizeDependentWidgets(androidx.constraintlayout.solver.widgets.ConstraintWidget,int,int):0:0 -> a
@@ -1135,6 +1134,8 @@ androidx.appcompat.app.ResourcesFlusher -> a.a.a.C:
     155:155:boolean androidx.constraintlayout.solver.widgets.Analyzer.traverse(androidx.constraintlayout.solver.widgets.ConstraintWidget,androidx.constraintlayout.solver.widgets.ConstraintWidgetGroup,java.util.List,boolean):0 -> a
     156:156:boolean androidx.constraintlayout.solver.widgets.Analyzer.traverse(androidx.constraintlayout.solver.widgets.ConstraintWidget,androidx.constraintlayout.solver.widgets.ConstraintWidgetGroup,java.util.List,boolean):0:0 -> a
     android.view.ActionMode$Callback androidx.core.widget.TextViewCompat.wrapCustomSelectionActionModeCallback(android.widget.TextView,android.view.ActionMode$Callback) -> a
+    android.view.Menu androidx.appcompat.view.menu.MenuWrapperFactory.wrapSupportMenu(android.content.Context,androidx.core.internal.view.SupportMenu) -> a
+    android.view.MenuItem androidx.appcompat.view.menu.MenuWrapperFactory.wrapSupportMenuItem(android.content.Context,androidx.core.internal.view.SupportMenuItem) -> a
     android.graphics.Path androidx.core.graphics.PathParser.createPathFromPathData(java.lang.String) -> b
     int androidx.core.content.res.TypedArrayUtils.getNamedInt(android.content.res.TypedArray,org.xmlpull.v1.XmlPullParser,java.lang.String,int,int) -> b
     java.lang.String androidx.core.app.NavUtils.getParentActivityName(android.content.Context,android.content.ComponentName) -> b
@@ -1237,21 +1238,20 @@ androidx.appcompat.app.WindowDecorActionBar -> a.a.a.I:
     19:19:android.view.Menu androidx.appcompat.app.WindowDecorActionBar$ActionModeImpl.getMenu():0:0 -> a
     19:19:boolean onKeyShortcut(int,android.view.KeyEvent):0 -> a
     20:20:boolean onKeyShortcut(int,android.view.KeyEvent):0:0 -> a
-    21:21:void androidx.appcompat.widget.ToolbarWidgetWrapper.setWindowTitle(java.lang.CharSequence):0:0 -> a
-    21:21:void setWindowTitle(java.lang.CharSequence):0 -> a
-    22:22:void androidx.appcompat.app.WindowDecorActionBar$ActionModeImpl.finish():0:0 -> a
+    void setWindowTitle(java.lang.CharSequence) -> a
+    21:21:void androidx.appcompat.app.WindowDecorActionBar$ActionModeImpl.finish():0:0 -> a
+    21:21:androidx.appcompat.view.ActionMode startActionMode(androidx.appcompat.view.ActionMode$Callback):0 -> a
+    22:22:android.view.ViewGroup androidx.appcompat.widget.ToolbarWidgetWrapper.getViewGroup():0:0 -> a
+    22:22:void androidx.appcompat.app.WindowDecorActionBar$ActionModeImpl.finish():0 -> a
     22:22:androidx.appcompat.view.ActionMode startActionMode(androidx.appcompat.view.ActionMode$Callback):0 -> a
-    23:23:android.view.ViewGroup androidx.appcompat.widget.ToolbarWidgetWrapper.getViewGroup():0:0 -> a
-    23:23:void androidx.appcompat.app.WindowDecorActionBar$ActionModeImpl.finish():0 -> a
+    23:23:void androidx.appcompat.app.WindowDecorActionBar$ActionModeImpl.finish():0:0 -> a
     23:23:androidx.appcompat.view.ActionMode startActionMode(androidx.appcompat.view.ActionMode$Callback):0 -> a
-    24:24:void androidx.appcompat.app.WindowDecorActionBar$ActionModeImpl.finish():0:0 -> a
-    24:24:androidx.appcompat.view.ActionMode startActionMode(androidx.appcompat.view.ActionMode$Callback):0 -> a
-    25:25:androidx.appcompat.view.ActionMode startActionMode(androidx.appcompat.view.ActionMode$Callback):0:0 -> a
-    26:26:boolean androidx.appcompat.app.WindowDecorActionBar$ActionModeImpl.dispatchOnCreate():0:0 -> a
-    26:26:androidx.appcompat.view.ActionMode startActionMode(androidx.appcompat.view.ActionMode$Callback):0 -> a
-    27:27:androidx.appcompat.view.ActionMode startActionMode(androidx.appcompat.view.ActionMode$Callback):0:0 -> a
-    28:28:boolean androidx.appcompat.app.WindowDecorActionBar$ActionModeImpl.dispatchOnCreate():0:0 -> a
-    28:28:androidx.appcompat.view.ActionMode startActionMode(androidx.appcompat.view.ActionMode$Callback):0 -> a
+    24:24:androidx.appcompat.view.ActionMode startActionMode(androidx.appcompat.view.ActionMode$Callback):0:0 -> a
+    25:25:boolean androidx.appcompat.app.WindowDecorActionBar$ActionModeImpl.dispatchOnCreate():0:0 -> a
+    25:25:androidx.appcompat.view.ActionMode startActionMode(androidx.appcompat.view.ActionMode$Callback):0 -> a
+    26:26:androidx.appcompat.view.ActionMode startActionMode(androidx.appcompat.view.ActionMode$Callback):0:0 -> a
+    27:27:boolean androidx.appcompat.app.WindowDecorActionBar$ActionModeImpl.dispatchOnCreate():0:0 -> a
+    27:27:androidx.appcompat.view.ActionMode startActionMode(androidx.appcompat.view.ActionMode$Callback):0 -> a
     1:1:int androidx.appcompat.widget.ToolbarWidgetWrapper.getDisplayOptions():0:0 -> b
     1:1:int getDisplayOptions():0 -> b
     2:2:void setDisplayOptions(int,int):0:0 -> b
@@ -1846,8 +1846,6 @@ androidx.appcompat.view.StandaloneActionMode -> a.a.d.d:
 androidx.appcompat.view.SupportActionModeWrapper -> a.a.d.e:
     android.content.Context mContext -> a
     androidx.appcompat.view.ActionMode mWrappedObject -> b
-    1:1:android.view.Menu androidx.appcompat.view.menu.MenuWrapperFactory.wrapSupportMenu(android.content.Context,androidx.core.internal.view.SupportMenu):0:0 -> getMenu
-    1:1:android.view.Menu getMenu():0 -> getMenu
     1:1:java.lang.Object androidx.appcompat.view.ActionMode.getTag():0:0 -> getTag
     1:1:java.lang.Object getTag():0 -> getTag
     1:1:boolean androidx.appcompat.view.ActionMode.getTitleOptionalHint():0:0 -> getTitleOptionalHint
@@ -1859,12 +1857,8 @@ androidx.appcompat.view.SupportActionModeWrapper$CallbackWrapper -> a.a.d.e$a:
     androidx.collection.SimpleArrayMap mMenus -> d
     android.view.ActionMode$Callback mWrappedCallback -> a
     java.util.ArrayList mActionModes -> c
-    1:1:android.view.Menu androidx.appcompat.view.menu.MenuWrapperFactory.wrapSupportMenu(android.content.Context,androidx.core.internal.view.SupportMenu):0:0 -> a
-    1:1:android.view.Menu getMenuWrapper(android.view.Menu):0 -> a
-    2:2:android.view.Menu getMenuWrapper(android.view.Menu):0:0 -> a
-    3:3:android.view.MenuItem androidx.appcompat.view.menu.MenuWrapperFactory.wrapSupportMenuItem(android.content.Context,androidx.core.internal.view.SupportMenuItem):0:0 -> a
-    3:3:boolean onActionItemClicked(androidx.appcompat.view.ActionMode,android.view.MenuItem):0 -> a
-    4:4:boolean onActionItemClicked(androidx.appcompat.view.ActionMode,android.view.MenuItem):0:0 -> a
+    android.view.Menu getMenuWrapper(android.view.Menu) -> a
+    boolean onActionItemClicked(androidx.appcompat.view.ActionMode,android.view.MenuItem) -> a
     boolean onCreateActionMode(androidx.appcompat.view.ActionMode,android.view.Menu) -> a
     void onDestroyActionMode(androidx.appcompat.view.ActionMode) -> a
     android.view.ActionMode getActionModeWrapper(androidx.appcompat.view.ActionMode) -> b
@@ -2111,12 +2105,10 @@ androidx.appcompat.view.menu.BaseMenuWrapper -> a.a.d.a.c:
     java.util.Map mMenuItems -> c
     android.content.Context mContext -> b
     java.util.Map mSubMenus -> d
-    1:1:android.view.MenuItem androidx.appcompat.view.menu.MenuWrapperFactory.wrapSupportMenuItem(android.content.Context,androidx.core.internal.view.SupportMenuItem):0:0 -> a
-    1:1:android.view.MenuItem getMenuItemWrapper(android.view.MenuItem):0 -> a
-    2:2:android.view.MenuItem getMenuItemWrapper(android.view.MenuItem):0:0 -> a
-    3:3:android.view.SubMenu androidx.appcompat.view.menu.MenuWrapperFactory.wrapSupportSubMenu(android.content.Context,androidx.core.internal.view.SupportSubMenu):0:0 -> a
-    3:3:android.view.SubMenu getSubMenuWrapper(android.view.SubMenu):0 -> a
-    4:4:android.view.SubMenu getSubMenuWrapper(android.view.SubMenu):0:0 -> a
+    android.view.MenuItem getMenuItemWrapper(android.view.MenuItem) -> a
+    1:1:android.view.SubMenu androidx.appcompat.view.menu.MenuWrapperFactory.wrapSupportSubMenu(android.content.Context,androidx.core.internal.view.SupportSubMenu):0:0 -> a
+    1:1:android.view.SubMenu getSubMenuWrapper(android.view.SubMenu):0 -> a
+    2:2:android.view.SubMenu getSubMenuWrapper(android.view.SubMenu):0:0 -> a
 androidx.appcompat.view.menu.BaseWrapper -> a.a.d.a.d:
     java.lang.Object mWrappedObject -> a
 androidx.appcompat.view.menu.CascadingMenuPopup -> a.a.d.a.i:
@@ -2335,16 +2327,16 @@ androidx.appcompat.view.menu.ListMenuItemView -> androidx.appcompat.view.menu.Li
     1:1:void androidx.appcompat.widget.TintTypedArray.recycle():0:0 -> <init>
     1:1:void <init>(android.content.Context,android.util.AttributeSet,int):0 -> <init>
     2:2:void <init>(android.content.Context,android.util.AttributeSet,int):0:0 -> <init>
+    1:1:void addContentView(android.view.View,int):0:0 -> a
+    1:1:void addContentView(android.view.View):0 -> a
     void addContentView(android.view.View,int) -> a
-    1:1:boolean androidx.appcompat.view.menu.MenuItemImpl.isCheckable():0:0 -> a
-    1:1:void initialize(androidx.appcompat.view.menu.MenuItemImpl,int):0 -> a
-    2:2:void initialize(androidx.appcompat.view.menu.MenuItemImpl,int):0:0 -> a
-    3:3:java.lang.CharSequence androidx.appcompat.view.menu.MenuItemImpl.getContentDescription():0:0 -> a
-    3:3:void initialize(androidx.appcompat.view.menu.MenuItemImpl,int):0 -> a
-    4:4:void initialize(androidx.appcompat.view.menu.MenuItemImpl,int):0:0 -> a
-    5:5:void addContentView(android.view.View,int):0:0 -> a
-    5:5:void addContentView(android.view.View):0 -> a
-    5:5:void insertCheckBox():0 -> a
+    2:2:boolean androidx.appcompat.view.menu.MenuItemImpl.isCheckable():0:0 -> a
+    2:2:void initialize(androidx.appcompat.view.menu.MenuItemImpl,int):0 -> a
+    3:3:void initialize(androidx.appcompat.view.menu.MenuItemImpl,int):0:0 -> a
+    4:4:java.lang.CharSequence androidx.appcompat.view.menu.MenuItemImpl.getContentDescription():0:0 -> a
+    4:4:void initialize(androidx.appcompat.view.menu.MenuItemImpl,int):0 -> a
+    5:5:void initialize(androidx.appcompat.view.menu.MenuItemImpl,int):0:0 -> a
+    void insertCheckBox() -> a
     6:6:java.lang.String androidx.appcompat.view.menu.MenuItemImpl.getShortcutLabel():0:0 -> a
     6:6:void setShortcut(boolean,char):0 -> a
     7:7:android.content.Context androidx.appcompat.view.menu.MenuBuilder.getContext():0:0 -> a
@@ -2358,9 +2350,7 @@ androidx.appcompat.view.menu.ListMenuItemView -> androidx.appcompat.view.menu.Li
     10:10:java.lang.String androidx.appcompat.view.menu.MenuItemImpl.getShortcutLabel():0:0 -> a
     10:10:void setShortcut(boolean,char):0 -> a
     11:11:void setShortcut(boolean,char):0:0 -> a
-    1:1:void addContentView(android.view.View,int):0:0 -> b
-    1:1:void addContentView(android.view.View):0 -> b
-    1:1:void insertRadioButton():0 -> b
+    void insertRadioButton() -> b
     boolean prefersCondensedTitle() -> c
     1:1:boolean androidx.appcompat.view.menu.MenuItemImpl.isChecked():0:0 -> setCheckable
     1:1:void setCheckable(boolean):0 -> setCheckable
@@ -2641,37 +2631,30 @@ androidx.appcompat.view.menu.MenuBuilder -> a.a.d.a.l:
     31:31:android.content.Context getContext():0:0 -> a
     31:31:boolean performItemAction(android.view.MenuItem,androidx.appcompat.view.menu.MenuPresenter,int):0 -> a
     32:32:boolean performItemAction(android.view.MenuItem,androidx.appcompat.view.menu.MenuPresenter,int):0:0 -> a
-    33:33:void androidx.appcompat.view.menu.MenuItemImpl.setSubMenu(androidx.appcompat.view.menu.SubMenuBuilder):0:0 -> a
+    33:33:android.view.SubMenu androidx.appcompat.view.menu.MenuItemImpl.getSubMenu():0:0 -> a
     33:33:boolean performItemAction(android.view.MenuItem,androidx.appcompat.view.menu.MenuPresenter,int):0 -> a
-    34:34:java.lang.CharSequence androidx.appcompat.view.menu.MenuItemImpl.getTitle():0:0 -> a
-    34:34:void androidx.appcompat.view.menu.MenuItemImpl.setSubMenu(androidx.appcompat.view.menu.SubMenuBuilder):0 -> a
-    34:34:boolean performItemAction(android.view.MenuItem,androidx.appcompat.view.menu.MenuPresenter,int):0 -> a
-    35:35:void androidx.appcompat.view.menu.MenuItemImpl.setSubMenu(androidx.appcompat.view.menu.SubMenuBuilder):0:0 -> a
+    34:34:boolean performItemAction(android.view.MenuItem,androidx.appcompat.view.menu.MenuPresenter,int):0:0 -> a
+    35:35:void androidx.appcompat.view.menu.MenuItemWrapperICS$ActionProviderWrapper.onPrepareSubMenu(android.view.SubMenu):0:0 -> a
     35:35:boolean performItemAction(android.view.MenuItem,androidx.appcompat.view.menu.MenuPresenter,int):0 -> a
-    36:36:android.view.SubMenu androidx.appcompat.view.menu.MenuItemImpl.getSubMenu():0:0 -> a
+    36:36:boolean dispatchSubMenuSelected(androidx.appcompat.view.menu.SubMenuBuilder,androidx.appcompat.view.menu.MenuPresenter):0:0 -> a
     36:36:boolean performItemAction(android.view.MenuItem,androidx.appcompat.view.menu.MenuPresenter,int):0 -> a
     37:37:boolean performItemAction(android.view.MenuItem,androidx.appcompat.view.menu.MenuPresenter,int):0:0 -> a
-    38:38:void androidx.appcompat.view.menu.MenuItemWrapperICS$ActionProviderWrapper.onPrepareSubMenu(android.view.SubMenu):0:0 -> a
-    38:38:boolean performItemAction(android.view.MenuItem,androidx.appcompat.view.menu.MenuPresenter,int):0 -> a
-    39:39:boolean dispatchSubMenuSelected(androidx.appcompat.view.menu.SubMenuBuilder,androidx.appcompat.view.menu.MenuPresenter):0:0 -> a
-    39:39:boolean performItemAction(android.view.MenuItem,androidx.appcompat.view.menu.MenuPresenter,int):0 -> a
-    40:40:boolean performItemAction(android.view.MenuItem,androidx.appcompat.view.menu.MenuPresenter,int):0:0 -> a
     void removeItemAtInt(int,boolean) -> a
     void removeMenuPresenter(androidx.appcompat.view.menu.MenuPresenter) -> a
     void restoreActionViewStates(android.os.Bundle) -> a
     void setCallback(androidx.appcompat.view.menu.MenuBuilder$Callback) -> a
-    41:41:int androidx.appcompat.view.menu.MenuItemImpl.getGroupId():0:0 -> a
-    41:41:void setExclusiveItemChecked(android.view.MenuItem):0 -> a
-    42:42:void setExclusiveItemChecked(android.view.MenuItem):0:0 -> a
-    43:43:boolean androidx.appcompat.view.menu.MenuItemImpl.isCheckable():0:0 -> a
-    43:43:void setExclusiveItemChecked(android.view.MenuItem):0 -> a
-    44:44:void setExclusiveItemChecked(android.view.MenuItem):0:0 -> a
-    45:45:android.content.res.Resources getResources():0:0 -> a
-    45:45:void setHeaderInternal(int,java.lang.CharSequence,int,android.graphics.drawable.Drawable,android.view.View):0 -> a
-    46:46:void setHeaderInternal(int,java.lang.CharSequence,int,android.graphics.drawable.Drawable,android.view.View):0:0 -> a
-    47:47:android.content.Context getContext():0:0 -> a
-    47:47:void setHeaderInternal(int,java.lang.CharSequence,int,android.graphics.drawable.Drawable,android.view.View):0 -> a
-    48:48:void setHeaderInternal(int,java.lang.CharSequence,int,android.graphics.drawable.Drawable,android.view.View):0:0 -> a
+    38:38:int androidx.appcompat.view.menu.MenuItemImpl.getGroupId():0:0 -> a
+    38:38:void setExclusiveItemChecked(android.view.MenuItem):0 -> a
+    39:39:void setExclusiveItemChecked(android.view.MenuItem):0:0 -> a
+    40:40:boolean androidx.appcompat.view.menu.MenuItemImpl.isCheckable():0:0 -> a
+    40:40:void setExclusiveItemChecked(android.view.MenuItem):0 -> a
+    41:41:void setExclusiveItemChecked(android.view.MenuItem):0:0 -> a
+    42:42:android.content.res.Resources getResources():0:0 -> a
+    42:42:void setHeaderInternal(int,java.lang.CharSequence,int,android.graphics.drawable.Drawable,android.view.View):0 -> a
+    43:43:void setHeaderInternal(int,java.lang.CharSequence,int,android.graphics.drawable.Drawable,android.view.View):0:0 -> a
+    44:44:android.content.Context getContext():0:0 -> a
+    44:44:void setHeaderInternal(int,java.lang.CharSequence,int,android.graphics.drawable.Drawable,android.view.View):0 -> a
+    45:45:void setHeaderInternal(int,java.lang.CharSequence,int,android.graphics.drawable.Drawable,android.view.View):0:0 -> a
     1:1:int findGroupIndex(int,int):0:0 -> addIntentOptions
     1:1:int findGroupIndex(int):0 -> addIntentOptions
     1:1:void removeGroup(int):0 -> addIntentOptions
@@ -2692,13 +2675,6 @@ androidx.appcompat.view.menu.MenuBuilder -> a.a.d.a.l:
     7:7:android.view.MenuItem add(int,int,int,java.lang.CharSequence):0:0 -> addIntentOptions
     7:7:int addIntentOptions(int,int,int,android.content.ComponentName,android.content.Intent[],android.content.Intent,int,android.view.MenuItem[]):0 -> addIntentOptions
     8:8:int addIntentOptions(int,int,int,android.content.ComponentName,android.content.Intent[],android.content.Intent,int,android.view.MenuItem[]):0:0 -> addIntentOptions
-    1:1:void androidx.appcompat.view.menu.MenuItemImpl.setSubMenu(androidx.appcompat.view.menu.SubMenuBuilder):0:0 -> addSubMenu
-    1:1:android.view.SubMenu addSubMenu(int,int,int,java.lang.CharSequence):0 -> addSubMenu
-    2:2:java.lang.CharSequence androidx.appcompat.view.menu.MenuItemImpl.getTitle():0:0 -> addSubMenu
-    2:2:void androidx.appcompat.view.menu.MenuItemImpl.setSubMenu(androidx.appcompat.view.menu.SubMenuBuilder):0 -> addSubMenu
-    2:2:android.view.SubMenu addSubMenu(int,int,int,java.lang.CharSequence):0 -> addSubMenu
-    3:3:void androidx.appcompat.view.menu.MenuItemImpl.setSubMenu(androidx.appcompat.view.menu.SubMenuBuilder):0:0 -> addSubMenu
-    3:3:android.view.SubMenu addSubMenu(int,int,int,java.lang.CharSequence):0 -> addSubMenu
     boolean expandItemActionView(androidx.appcompat.view.menu.MenuItemImpl) -> b
     java.lang.String getActionViewStatesKey() -> b
     1:1:void dispatchPresenterUpdate(boolean):0:0 -> b
@@ -2814,9 +2790,14 @@ androidx.appcompat.view.menu.MenuItemImpl -> a.a.d.a.p:
     6:6:java.lang.CharSequence getTitle():0:0 -> a
     6:6:java.lang.CharSequence getTitleForItemView(androidx.appcompat.view.menu.MenuView$ItemView):0 -> a
     void setActionViewExpanded(boolean) -> a
-    7:7:void androidx.core.view.ActionProvider.reset():0:0 -> a
-    7:7:androidx.core.internal.view.SupportMenuItem setSupportActionProvider(androidx.core.view.ActionProvider):0 -> a
-    8:8:androidx.core.internal.view.SupportMenuItem setSupportActionProvider(androidx.core.view.ActionProvider):0:0 -> a
+    7:7:java.lang.CharSequence getTitle():0:0 -> a
+    7:7:void setSubMenu(androidx.appcompat.view.menu.SubMenuBuilder):0 -> a
+    8:8:androidx.appcompat.view.menu.MenuBuilder androidx.appcompat.view.menu.MenuBuilder.setHeaderTitleInt(java.lang.CharSequence):0:0 -> a
+    8:8:android.view.SubMenu androidx.appcompat.view.menu.SubMenuBuilder.setHeaderTitle(java.lang.CharSequence):0 -> a
+    8:8:void setSubMenu(androidx.appcompat.view.menu.SubMenuBuilder):0 -> a
+    9:9:void androidx.core.view.ActionProvider.reset():0:0 -> a
+    9:9:androidx.core.internal.view.SupportMenuItem setSupportActionProvider(androidx.core.view.ActionProvider):0 -> a
+    10:10:androidx.core.internal.view.SupportMenuItem setSupportActionProvider(androidx.core.view.ActionProvider):0:0 -> a
     char getShortcut() -> b
     void setCheckedInt(boolean) -> b
     boolean hasCollapsibleActionView() -> c
@@ -2917,17 +2898,16 @@ androidx.appcompat.view.menu.MenuPopupHelper -> a.a.d.a.u:
     boolean mOverflowOnly -> c
     android.view.View mAnchorView -> f
     androidx.appcompat.view.menu.MenuPopup mPopup -> j
-    void dismiss() -> a
+    1:1:androidx.appcompat.view.menu.MenuPopup createPopup():0:0 -> a
+    1:1:androidx.appcompat.view.menu.MenuPopup getPopup():0 -> a
+    2:2:androidx.appcompat.view.menu.MenuPopup getPopup():0:0 -> a
     void setPresenterCallback(androidx.appcompat.view.menu.MenuPresenter$Callback) -> a
-    1:1:void androidx.appcompat.view.menu.MenuPopup.setEpicenterBounds(android.graphics.Rect):0:0 -> a
-    1:1:void showPopup(int,int,boolean,boolean):0 -> a
-    2:2:void showPopup(int,int,boolean,boolean):0:0 -> a
-    1:1:androidx.appcompat.view.menu.MenuPopup createPopup():0:0 -> b
-    1:1:androidx.appcompat.view.menu.MenuPopup getPopup():0 -> b
-    2:2:androidx.appcompat.view.menu.MenuPopup getPopup():0:0 -> b
-    boolean isShowing() -> c
-    void onDismiss() -> d
-    boolean tryShow() -> e
+    3:3:void androidx.appcompat.view.menu.MenuPopup.setEpicenterBounds(android.graphics.Rect):0:0 -> a
+    3:3:void showPopup(int,int,boolean,boolean):0 -> a
+    4:4:void showPopup(int,int,boolean,boolean):0:0 -> a
+    boolean isShowing() -> b
+    void onDismiss() -> c
+    boolean tryShow() -> d
 androidx.appcompat.view.menu.MenuPopupHelper$1 -> a.a.d.a.t:
     androidx.appcompat.view.menu.MenuPopupHelper this$0 -> a
 androidx.appcompat.view.menu.MenuPresenter -> a.a.d.a.v:
@@ -3216,8 +3196,6 @@ androidx.appcompat.widget.ActionBarContextView -> androidx.appcompat.widget.Acti
     boolean showOverflowMenu() -> e
     1:1:int androidx.appcompat.widget.AbsActionBarView.getContentHeight():0:0 -> getContentHeight
     1:1:int getContentHeight():0 -> getContentHeight
-    1:1:boolean androidx.appcompat.widget.ActionMenuPresenter.hideSubMenus():0:0 -> onDetachedFromWindow
-    1:1:void onDetachedFromWindow():0 -> onDetachedFromWindow
 androidx.appcompat.widget.ActionBarContextView$1 -> a.a.e.c:
     androidx.appcompat.view.ActionMode val$mode -> a
 androidx.appcompat.widget.ActionBarOverlayLayout -> androidx.appcompat.widget.ActionBarOverlayLayout:
@@ -3321,8 +3299,6 @@ androidx.appcompat.widget.ActionBarOverlayLayout -> androidx.appcompat.widget.Ac
     1:1:void setLogo(int):0 -> setLogo
     1:1:void androidx.appcompat.widget.ToolbarWidgetWrapper.setWindowCallback(android.view.Window$Callback):0:0 -> setWindowCallback
     1:1:void setWindowCallback(android.view.Window$Callback):0 -> setWindowCallback
-    1:1:void androidx.appcompat.widget.ToolbarWidgetWrapper.setWindowTitle(java.lang.CharSequence):0:0 -> setWindowTitle
-    1:1:void setWindowTitle(java.lang.CharSequence):0 -> setWindowTitle
 androidx.appcompat.widget.ActionBarOverlayLayout$1 -> a.a.e.d:
     androidx.appcompat.widget.ActionBarOverlayLayout this$0 -> a
 androidx.appcompat.widget.ActionBarOverlayLayout$2 -> a.a.e.e:
@@ -3455,16 +3431,17 @@ androidx.appcompat.widget.ActionMenuPresenter -> a.a.e.g:
     57:57:boolean androidx.appcompat.view.menu.MenuItemImpl.isActionViewExpanded():0:0 -> a
     57:57:void updateMenuView(boolean):0 -> a
     58:58:void updateMenuView(boolean):0:0 -> a
-    1:1:boolean hideSubMenus():0:0 -> b
-    1:1:boolean dismissPopupMenus():0 -> b
+    boolean dismissPopupMenus() -> b
     1:1:void androidx.appcompat.view.menu.MenuPopupHelper.dismiss():0:0 -> c
     1:1:boolean hideOverflowMenu():0 -> c
-    boolean isOverflowMenuShowing() -> d
-    1:1:java.util.ArrayList androidx.appcompat.view.menu.MenuBuilder.getNonActionItems():0:0 -> e
-    1:1:boolean showOverflowMenu():0 -> e
-    2:2:boolean showOverflowMenu():0:0 -> e
-    3:3:boolean androidx.appcompat.view.menu.BaseMenuPresenter.onSubMenuSelected(androidx.appcompat.view.menu.SubMenuBuilder):0:0 -> e
-    3:3:boolean showOverflowMenu():0 -> e
+    1:1:void androidx.appcompat.view.menu.MenuPopupHelper.dismiss():0:0 -> d
+    1:1:boolean hideSubMenus():0 -> d
+    boolean isOverflowMenuShowing() -> e
+    1:1:java.util.ArrayList androidx.appcompat.view.menu.MenuBuilder.getNonActionItems():0:0 -> f
+    1:1:boolean showOverflowMenu():0 -> f
+    2:2:boolean showOverflowMenu():0:0 -> f
+    3:3:boolean androidx.appcompat.view.menu.BaseMenuPresenter.onSubMenuSelected(androidx.appcompat.view.menu.SubMenuBuilder):0:0 -> f
+    3:3:boolean showOverflowMenu():0 -> f
 androidx.appcompat.widget.ActionMenuPresenter$ActionButtonSubmenu -> a.a.e.g$a:
     androidx.appcompat.widget.ActionMenuPresenter this$0 -> m
     1:1:void androidx.appcompat.view.menu.MenuPopupHelper.<init>(android.content.Context,androidx.appcompat.view.menu.MenuBuilder,android.view.View,boolean,int):0:0 -> <init>
@@ -3478,8 +3455,8 @@ androidx.appcompat.widget.ActionMenuPresenter$ActionButtonSubmenu -> a.a.e.g$a:
     6:6:void androidx.appcompat.view.menu.MenuPopupHelper.setAnchorView(android.view.View):0:0 -> <init>
     6:6:void <init>(androidx.appcompat.widget.ActionMenuPresenter,android.content.Context,androidx.appcompat.view.menu.SubMenuBuilder,android.view.View):0 -> <init>
     7:7:void <init>(androidx.appcompat.widget.ActionMenuPresenter,android.content.Context,androidx.appcompat.view.menu.SubMenuBuilder,android.view.View):0:0 -> <init>
-    1:1:void androidx.appcompat.view.menu.MenuPopupHelper.onDismiss():0:0 -> d
-    1:1:void onDismiss():0 -> d
+    1:1:void androidx.appcompat.view.menu.MenuPopupHelper.onDismiss():0:0 -> c
+    1:1:void onDismiss():0 -> c
 androidx.appcompat.widget.ActionMenuPresenter$ActionMenuPopupCallback -> a.a.e.g$b:
     androidx.appcompat.widget.ActionMenuPresenter this$0 -> a
 androidx.appcompat.widget.ActionMenuPresenter$OpenOverflowRunnable -> a.a.e.g$c:
@@ -3511,13 +3488,13 @@ androidx.appcompat.widget.ActionMenuPresenter$OverflowPopup -> a.a.e.g$e:
     2:2:void androidx.appcompat.view.menu.MenuPopupHelper.setGravity(int):0:0 -> <init>
     2:2:void <init>(androidx.appcompat.widget.ActionMenuPresenter,android.content.Context,androidx.appcompat.view.menu.MenuBuilder,android.view.View,boolean):0 -> <init>
     3:3:void <init>(androidx.appcompat.widget.ActionMenuPresenter,android.content.Context,androidx.appcompat.view.menu.MenuBuilder,android.view.View,boolean):0:0 -> <init>
-    1:1:androidx.appcompat.view.menu.MenuBuilder androidx.appcompat.widget.ActionMenuPresenter.access$000(androidx.appcompat.widget.ActionMenuPresenter):0:0 -> d
-    1:1:void onDismiss():0 -> d
-    2:2:void androidx.appcompat.view.menu.MenuBuilder.close():0:0 -> d
-    2:2:void onDismiss():0 -> d
-    3:3:void onDismiss():0:0 -> d
-    4:4:void androidx.appcompat.view.menu.MenuPopupHelper.onDismiss():0:0 -> d
-    4:4:void onDismiss():0 -> d
+    1:1:androidx.appcompat.view.menu.MenuBuilder androidx.appcompat.widget.ActionMenuPresenter.access$000(androidx.appcompat.widget.ActionMenuPresenter):0:0 -> c
+    1:1:void onDismiss():0 -> c
+    2:2:void androidx.appcompat.view.menu.MenuBuilder.close():0:0 -> c
+    2:2:void onDismiss():0 -> c
+    3:3:void onDismiss():0:0 -> c
+    4:4:void androidx.appcompat.view.menu.MenuPopupHelper.onDismiss():0:0 -> c
+    4:4:void onDismiss():0 -> c
 androidx.appcompat.widget.ActionMenuPresenter$PopupPresenterCallback -> a.a.e.g$f:
     androidx.appcompat.widget.ActionMenuPresenter this$0 -> a
     1:1:androidx.appcompat.view.menu.MenuPresenter$Callback androidx.appcompat.view.menu.BaseMenuPresenter.getCallback():0:0 -> a
@@ -3660,17 +3637,6 @@ androidx.appcompat.widget.AppCompatButton -> a.a.e.k:
     androidx.appcompat.widget.AppCompatTextHelper mTextHelper -> b
     1:1:void <init>(android.content.Context,android.util.AttributeSet,int):0:0 -> <init>
     1:1:void <init>(android.content.Context,android.util.AttributeSet):0 -> <init>
-    1:1:int androidx.appcompat.widget.AppCompatTextHelper.getAutoSizeMaxTextSize():0:0 -> getAutoSizeMaxTextSize
-    1:1:int getAutoSizeMaxTextSize():0 -> getAutoSizeMaxTextSize
-    1:1:int androidx.appcompat.widget.AppCompatTextHelper.getAutoSizeMinTextSize():0:0 -> getAutoSizeMinTextSize
-    1:1:int getAutoSizeMinTextSize():0 -> getAutoSizeMinTextSize
-    1:1:int androidx.appcompat.widget.AppCompatTextHelper.getAutoSizeStepGranularity():0:0 -> getAutoSizeStepGranularity
-    1:1:int getAutoSizeStepGranularity():0 -> getAutoSizeStepGranularity
-    1:1:int[] androidx.appcompat.widget.AppCompatTextHelper.getAutoSizeTextAvailableSizes():0:0 -> getAutoSizeTextAvailableSizes
-    1:1:int[] getAutoSizeTextAvailableSizes():0 -> getAutoSizeTextAvailableSizes
-    2:2:int[] getAutoSizeTextAvailableSizes():0:0 -> getAutoSizeTextAvailableSizes
-    1:1:int androidx.appcompat.widget.AppCompatTextHelper.getAutoSizeTextType():0:0 -> getAutoSizeTextType
-    1:1:int getAutoSizeTextType():0 -> getAutoSizeTextType
     1:1:void androidx.appcompat.widget.AppCompatTextHelper.autoSizeText():0:0 -> onTextChanged
     1:1:void onTextChanged(java.lang.CharSequence,int,int,int):0 -> onTextChanged
     1:1:void androidx.appcompat.widget.AppCompatBackgroundHelper.onSetBackgroundDrawable(android.graphics.drawable.Drawable):0:0 -> setBackgroundDrawable
@@ -3887,6 +3853,8 @@ androidx.appcompat.widget.AppCompatImageHelper -> a.a.e.r:
 androidx.appcompat.widget.AppCompatImageView -> a.a.e.s:
     androidx.appcompat.widget.AppCompatBackgroundHelper mBackgroundTintHelper -> a
     androidx.appcompat.widget.AppCompatImageHelper mImageHelper -> b
+    1:1:void <init>(android.content.Context,android.util.AttributeSet):0:0 -> <init>
+    1:1:void <init>(android.content.Context):0 -> <init>
     1:1:android.content.res.ColorStateList androidx.appcompat.widget.AppCompatImageHelper.getSupportImageTintList():0:0 -> getSupportImageTintList
     1:1:android.content.res.ColorStateList getSupportImageTintList():0 -> getSupportImageTintList
     1:1:android.graphics.PorterDuff$Mode androidx.appcompat.widget.AppCompatImageHelper.getSupportImageTintMode():0:0 -> getSupportImageTintMode
@@ -4243,8 +4211,18 @@ androidx.appcompat.widget.AppCompatTextHelper -> a.a.e.G:
     38:38:java.lang.String androidx.appcompat.widget.TintTypedArray.getString(int):0:0 -> a
     38:38:void updateTypefaceAndStyle(android.content.Context,androidx.appcompat.widget.TintTypedArray):0 -> a
     39:39:void updateTypefaceAndStyle(android.content.Context,androidx.appcompat.widget.TintTypedArray):0:0 -> a
-    1:1:boolean androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper.isAutoSizeEnabled():0:0 -> b
-    1:1:boolean isAutoSizeEnabled():0 -> b
+    1:1:int androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper.getAutoSizeMaxTextSize():0:0 -> b
+    1:1:int getAutoSizeMaxTextSize():0 -> b
+    1:1:int androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper.getAutoSizeMinTextSize():0:0 -> c
+    1:1:int getAutoSizeMinTextSize():0 -> c
+    1:1:int androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper.getAutoSizeStepGranularity():0:0 -> d
+    1:1:int getAutoSizeStepGranularity():0 -> d
+    1:1:int[] androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper.getAutoSizeTextAvailableSizes():0:0 -> e
+    1:1:int[] getAutoSizeTextAvailableSizes():0 -> e
+    1:1:int androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper.getAutoSizeTextType():0:0 -> f
+    1:1:int getAutoSizeTextType():0 -> f
+    1:1:boolean androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper.isAutoSizeEnabled():0:0 -> g
+    1:1:boolean isAutoSizeEnabled():0 -> g
 androidx.appcompat.widget.AppCompatTextHelper$1 -> a.a.e.F:
     androidx.appcompat.widget.AppCompatTextHelper this$0 -> b
     java.lang.ref.WeakReference val$textViewWeak -> a
@@ -4257,32 +4235,6 @@ androidx.appcompat.widget.AppCompatTextView -> a.a.e.H:
     java.util.concurrent.Future mPrecomputedTextFuture -> c
     1:1:void <init>(android.content.Context,android.util.AttributeSet):0:0 -> <init>
     1:1:void <init>(android.content.Context):0 -> <init>
-    1:1:int androidx.appcompat.widget.AppCompatTextHelper.getAutoSizeMaxTextSize():0:0 -> getAutoSizeMaxTextSize
-    1:1:int getAutoSizeMaxTextSize():0 -> getAutoSizeMaxTextSize
-    2:2:int androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper.getAutoSizeMaxTextSize():0:0 -> getAutoSizeMaxTextSize
-    2:2:int androidx.appcompat.widget.AppCompatTextHelper.getAutoSizeMaxTextSize():0 -> getAutoSizeMaxTextSize
-    2:2:int getAutoSizeMaxTextSize():0 -> getAutoSizeMaxTextSize
-    1:1:int androidx.appcompat.widget.AppCompatTextHelper.getAutoSizeMinTextSize():0:0 -> getAutoSizeMinTextSize
-    1:1:int getAutoSizeMinTextSize():0 -> getAutoSizeMinTextSize
-    2:2:int androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper.getAutoSizeMinTextSize():0:0 -> getAutoSizeMinTextSize
-    2:2:int androidx.appcompat.widget.AppCompatTextHelper.getAutoSizeMinTextSize():0 -> getAutoSizeMinTextSize
-    2:2:int getAutoSizeMinTextSize():0 -> getAutoSizeMinTextSize
-    1:1:int androidx.appcompat.widget.AppCompatTextHelper.getAutoSizeStepGranularity():0:0 -> getAutoSizeStepGranularity
-    1:1:int getAutoSizeStepGranularity():0 -> getAutoSizeStepGranularity
-    2:2:int androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper.getAutoSizeStepGranularity():0:0 -> getAutoSizeStepGranularity
-    2:2:int androidx.appcompat.widget.AppCompatTextHelper.getAutoSizeStepGranularity():0 -> getAutoSizeStepGranularity
-    2:2:int getAutoSizeStepGranularity():0 -> getAutoSizeStepGranularity
-    1:1:int[] androidx.appcompat.widget.AppCompatTextHelper.getAutoSizeTextAvailableSizes():0:0 -> getAutoSizeTextAvailableSizes
-    1:1:int[] getAutoSizeTextAvailableSizes():0 -> getAutoSizeTextAvailableSizes
-    2:2:int[] androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper.getAutoSizeTextAvailableSizes():0:0 -> getAutoSizeTextAvailableSizes
-    2:2:int[] androidx.appcompat.widget.AppCompatTextHelper.getAutoSizeTextAvailableSizes():0 -> getAutoSizeTextAvailableSizes
-    2:2:int[] getAutoSizeTextAvailableSizes():0 -> getAutoSizeTextAvailableSizes
-    3:3:int[] getAutoSizeTextAvailableSizes():0:0 -> getAutoSizeTextAvailableSizes
-    1:1:int androidx.appcompat.widget.AppCompatTextHelper.getAutoSizeTextType():0:0 -> getAutoSizeTextType
-    1:1:int getAutoSizeTextType():0 -> getAutoSizeTextType
-    2:2:int androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper.getAutoSizeTextType():0:0 -> getAutoSizeTextType
-    2:2:int androidx.appcompat.widget.AppCompatTextHelper.getAutoSizeTextType():0 -> getAutoSizeTextType
-    2:2:int getAutoSizeTextType():0 -> getAutoSizeTextType
     1:1:int androidx.core.widget.TextViewCompat.getFirstBaselineToTopHeight(android.widget.TextView):0:0 -> getFirstBaselineToTopHeight
     1:1:int getFirstBaselineToTopHeight():0 -> getFirstBaselineToTopHeight
     1:1:int androidx.core.widget.TextViewCompat.getLastBaselineToBottomHeight(android.widget.TextView):0:0 -> getLastBaselineToBottomHeight
@@ -4354,14 +4306,9 @@ androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper -> a.a.e.I:
     9:9:void setRawTextSize(float):0:0 -> a
     9:9:void setTextSizeInternal(int,float):0 -> a
     void validateAndSetAutoSizeTextTypeUniformConfiguration(float,float,float) -> a
-    int getAutoSizeMaxTextSize() -> b
-    int getAutoSizeMinTextSize() -> c
-    int getAutoSizeStepGranularity() -> d
-    int[] getAutoSizeTextAvailableSizes() -> e
-    int getAutoSizeTextType() -> f
-    boolean setupAutoSizeText() -> g
-    boolean setupAutoSizeUniformPresetSizesConfiguration() -> h
-    boolean supportsAutoSizeText() -> i
+    boolean setupAutoSizeText() -> b
+    boolean setupAutoSizeUniformPresetSizesConfiguration() -> c
+    boolean supportsAutoSizeText() -> d
 androidx.appcompat.widget.ButtonBarLayout -> androidx.appcompat.widget.ButtonBarLayout:
     boolean mAllowStacking -> a
     int mLastWidthSize -> b
@@ -4465,32 +4412,27 @@ androidx.appcompat.widget.DropDownListView -> a.a.e.M:
     10:10:void clearPressedItem():0:0 -> a
     10:10:boolean onForwardedEvent(android.view.MotionEvent,int):0 -> a
     11:11:boolean onForwardedEvent(android.view.MotionEvent,int):0:0 -> a
-    12:12:androidx.core.widget.AutoScrollHelper androidx.core.widget.AutoScrollHelper.setEnabled(boolean):0:0 -> a
+    12:12:boolean androidx.core.widget.AutoScrollHelper.onTouch(android.view.View,android.view.MotionEvent):0:0 -> a
     12:12:boolean onForwardedEvent(android.view.MotionEvent,int):0 -> a
-    13:13:boolean onForwardedEvent(android.view.MotionEvent,int):0:0 -> a
+    13:13:void androidx.core.widget.AutoScrollHelper.requestStop():0:0 -> a
+    13:13:boolean androidx.core.widget.AutoScrollHelper.onTouch(android.view.View,android.view.MotionEvent):0 -> a
+    13:13:boolean onForwardedEvent(android.view.MotionEvent,int):0 -> a
     14:14:boolean androidx.core.widget.AutoScrollHelper.onTouch(android.view.View,android.view.MotionEvent):0:0 -> a
     14:14:boolean onForwardedEvent(android.view.MotionEvent,int):0 -> a
-    15:15:void androidx.core.widget.AutoScrollHelper.requestStop():0:0 -> a
+    15:15:void androidx.core.widget.AutoScrollHelper$ClampedScroller.setTargetVelocity(float,float):0:0 -> a
     15:15:boolean androidx.core.widget.AutoScrollHelper.onTouch(android.view.View,android.view.MotionEvent):0 -> a
     15:15:boolean onForwardedEvent(android.view.MotionEvent,int):0 -> a
     16:16:boolean androidx.core.widget.AutoScrollHelper.onTouch(android.view.View,android.view.MotionEvent):0:0 -> a
     16:16:boolean onForwardedEvent(android.view.MotionEvent,int):0 -> a
-    17:17:void androidx.core.widget.AutoScrollHelper$ClampedScroller.setTargetVelocity(float,float):0:0 -> a
+    17:17:void androidx.core.widget.AutoScrollHelper.startAnimating():0:0 -> a
     17:17:boolean androidx.core.widget.AutoScrollHelper.onTouch(android.view.View,android.view.MotionEvent):0 -> a
     17:17:boolean onForwardedEvent(android.view.MotionEvent,int):0 -> a
     18:18:boolean androidx.core.widget.AutoScrollHelper.onTouch(android.view.View,android.view.MotionEvent):0:0 -> a
     18:18:boolean onForwardedEvent(android.view.MotionEvent,int):0 -> a
-    19:19:void androidx.core.widget.AutoScrollHelper.startAnimating():0:0 -> a
-    19:19:boolean androidx.core.widget.AutoScrollHelper.onTouch(android.view.View,android.view.MotionEvent):0 -> a
-    19:19:boolean onForwardedEvent(android.view.MotionEvent,int):0 -> a
-    20:20:boolean androidx.core.widget.AutoScrollHelper.onTouch(android.view.View,android.view.MotionEvent):0:0 -> a
-    20:20:boolean onForwardedEvent(android.view.MotionEvent,int):0 -> a
-    21:21:boolean onForwardedEvent(android.view.MotionEvent,int):0:0 -> a
-    22:22:androidx.core.widget.AutoScrollHelper androidx.core.widget.AutoScrollHelper.setEnabled(boolean):0:0 -> a
-    22:22:boolean onForwardedEvent(android.view.MotionEvent,int):0 -> a
-    23:23:boolean touchModeDrawsInPressedStateCompat():0:0 -> a
-    23:23:void updateSelectorStateCompat():0 -> a
-    24:24:void updateSelectorStateCompat():0:0 -> a
+    19:19:boolean onForwardedEvent(android.view.MotionEvent,int):0:0 -> a
+    20:20:boolean touchModeDrawsInPressedStateCompat():0:0 -> a
+    20:20:void updateSelectorStateCompat():0 -> a
+    21:21:void updateSelectorStateCompat():0:0 -> a
     1:1:void drawSelectorCompat(android.graphics.Canvas):0:0 -> dispatchDraw
     1:1:void dispatchDraw(android.graphics.Canvas):0 -> dispatchDraw
     2:2:void dispatchDraw(android.graphics.Canvas):0:0 -> dispatchDraw
@@ -4834,10 +4776,7 @@ androidx.appcompat.widget.ScrollingTabContainerView$TabView -> a.a.e.Z$c:
     1:1:void androidx.appcompat.widget.TintTypedArray.recycle():0:0 -> <init>
     1:1:void <init>(androidx.appcompat.widget.ScrollingTabContainerView,android.content.Context,androidx.appcompat.app.ActionBar$Tab,boolean):0 -> <init>
     2:2:void <init>(androidx.appcompat.widget.ScrollingTabContainerView,android.content.Context,androidx.appcompat.app.ActionBar$Tab,boolean):0:0 -> <init>
-    1:1:void androidx.appcompat.widget.AppCompatImageView.<init>(android.content.Context,android.util.AttributeSet):0:0 -> a
-    1:1:void androidx.appcompat.widget.AppCompatImageView.<init>(android.content.Context):0 -> a
-    1:1:void update():0 -> a
-    2:2:void update():0:0 -> a
+    void update() -> a
 androidx.appcompat.widget.SearchView -> androidx.appcompat.widget.SearchView:
     android.widget.ImageView mVoiceButton -> x
     boolean mIconifiedByDefault -> N
@@ -5002,7 +4941,7 @@ androidx.appcompat.widget.SearchView$OnCloseListener -> androidx.appcompat.widge
 androidx.appcompat.widget.SearchView$OnQueryTextListener -> androidx.appcompat.widget.SearchView$c:
 androidx.appcompat.widget.SearchView$OnSuggestionListener -> androidx.appcompat.widget.SearchView$d:
 androidx.appcompat.widget.SearchView$SavedState -> androidx.appcompat.widget.SearchView$e:
-    boolean isIconified -> a
+    boolean isIconified -> c
     1:1:void androidx.customview.view.AbsSavedState.writeToParcel(android.os.Parcel,int):0:0 -> writeToParcel
     1:1:void writeToParcel(android.os.Parcel,int):0 -> writeToParcel
     2:2:void writeToParcel(android.os.Parcel,int):0:0 -> writeToParcel
@@ -5335,7 +5274,7 @@ androidx.appcompat.widget.Toolbar -> androidx.appcompat.widget.Toolbar:
     boolean shouldLayout(android.view.View) -> d
     void ensureCollapseButtonView() -> e
     void ensureContentInsets() -> f
-    void ensureMenu() -> g
+    void ensureLogoView() -> g
     1:1:int androidx.appcompat.widget.RtlSpacingHelper.getEnd():0:0 -> getContentInsetEnd
     1:1:int getContentInsetEnd():0 -> getContentInsetEnd
     1:1:int androidx.appcompat.widget.RtlSpacingHelper.getLeft():0:0 -> getContentInsetLeft
@@ -5344,16 +5283,16 @@ androidx.appcompat.widget.Toolbar -> androidx.appcompat.widget.Toolbar:
     1:1:int getContentInsetRight():0 -> getContentInsetRight
     1:1:int androidx.appcompat.widget.RtlSpacingHelper.getStart():0:0 -> getContentInsetStart
     1:1:int getContentInsetStart():0 -> getContentInsetStart
-    1:1:void androidx.appcompat.widget.ActionMenuView.<init>(android.content.Context):0:0 -> h
-    1:1:void ensureMenuView():0 -> h
-    2:2:void ensureMenuView():0:0 -> h
-    void ensureNavButtonView() -> i
-    boolean hasExpandedActionView() -> j
-    boolean hideOverflowMenu() -> k
-    boolean isOverflowMenuShowPending() -> l
-    boolean isOverflowMenuShowing() -> m
-    void removeChildrenForExpandedActionView() -> n
-    boolean showOverflowMenu() -> o
+    void ensureMenu() -> h
+    1:1:void androidx.appcompat.widget.ActionMenuView.<init>(android.content.Context):0:0 -> i
+    1:1:void ensureMenuView():0 -> i
+    2:2:void ensureMenuView():0:0 -> i
+    void ensureNavButtonView() -> j
+    boolean hasExpandedActionView() -> k
+    boolean hideOverflowMenu() -> l
+    boolean isOverflowMenuShowPending() -> m
+    boolean isOverflowMenuShowing() -> n
+    void removeChildrenForExpandedActionView() -> o
     1:1:int getViewListMeasuredWidth(java.util.List,int[]):0:0 -> onLayout
     1:1:void onLayout(boolean,int,int,int,int):0 -> onLayout
     2:2:void onLayout(boolean,int,int,int,int):0:0 -> onLayout
@@ -5370,24 +5309,7 @@ androidx.appcompat.widget.Toolbar -> androidx.appcompat.widget.Toolbar:
     1:1:int androidx.appcompat.view.menu.MenuItemImpl.getItemId():0:0 -> onSaveInstanceState
     1:1:android.os.Parcelable onSaveInstanceState():0 -> onSaveInstanceState
     2:2:android.os.Parcelable onSaveInstanceState():0:0 -> onSaveInstanceState
-    1:1:void ensureLogoView():0:0 -> setLogo
-    1:1:void setLogo(android.graphics.drawable.Drawable):0 -> setLogo
-    2:2:void androidx.appcompat.widget.AppCompatImageView.<init>(android.content.Context,android.util.AttributeSet):0:0 -> setLogo
-    2:2:void androidx.appcompat.widget.AppCompatImageView.<init>(android.content.Context):0 -> setLogo
-    2:2:void ensureLogoView():0 -> setLogo
-    2:2:void setLogo(android.graphics.drawable.Drawable):0 -> setLogo
-    3:3:void ensureLogoView():0:0 -> setLogo
-    3:3:void setLogo(android.graphics.drawable.Drawable):0 -> setLogo
-    4:4:void setLogo(android.graphics.drawable.Drawable):0:0 -> setLogo
-    1:1:void ensureLogoView():0:0 -> setLogoDescription
-    1:1:void setLogoDescription(java.lang.CharSequence):0 -> setLogoDescription
-    2:2:void androidx.appcompat.widget.AppCompatImageView.<init>(android.content.Context,android.util.AttributeSet):0:0 -> setLogoDescription
-    2:2:void androidx.appcompat.widget.AppCompatImageView.<init>(android.content.Context):0 -> setLogoDescription
-    2:2:void ensureLogoView():0 -> setLogoDescription
-    2:2:void setLogoDescription(java.lang.CharSequence):0 -> setLogoDescription
-    3:3:void ensureLogoView():0:0 -> setLogoDescription
-    3:3:void setLogoDescription(java.lang.CharSequence):0 -> setLogoDescription
-    4:4:void setLogoDescription(java.lang.CharSequence):0:0 -> setLogoDescription
+    boolean showOverflowMenu() -> p
 androidx.appcompat.widget.Toolbar$1 -> a.a.e.ta:
     androidx.appcompat.widget.Toolbar this$0 -> a
 androidx.appcompat.widget.Toolbar$2 -> a.a.e.ua:
@@ -5415,8 +5337,8 @@ androidx.appcompat.widget.Toolbar$LayoutParams -> androidx.appcompat.widget.Tool
     1:1:void <init>(android.view.ViewGroup$MarginLayoutParams):0 -> <init>
 androidx.appcompat.widget.Toolbar$OnMenuItemClickListener -> androidx.appcompat.widget.Toolbar$c:
 androidx.appcompat.widget.Toolbar$SavedState -> androidx.appcompat.widget.Toolbar$d:
-    boolean isOverflowOpen -> b
-    int expandedMenuItemId -> a
+    int expandedMenuItemId -> c
+    boolean isOverflowOpen -> d
     1:1:void androidx.customview.view.AbsSavedState.writeToParcel(android.os.Parcel,int):0:0 -> writeToParcel
     1:1:void writeToParcel(android.os.Parcel,int):0 -> writeToParcel
     2:2:void writeToParcel(android.os.Parcel,int):0:0 -> writeToParcel
@@ -5502,6 +5424,8 @@ androidx.appcompat.widget.ToolbarWidgetWrapper -> a.a.e.za:
     void setTitleInt(java.lang.CharSequence) -> a
     androidx.core.view.ViewPropertyAnimatorCompat setupAnimatorToVisibility(int,long) -> a
     void initIndeterminateProgress() -> b
+    1:1:void setTitleInt(java.lang.CharSequence):0:0 -> b
+    1:1:void setWindowTitle(java.lang.CharSequence):0 -> b
     void initProgress() -> c
     void updateHomeAccessibility() -> d
     void updateNavigationIcon() -> e
@@ -7539,12 +7463,6 @@ androidx.constraintlayout.widget.ConstraintLayout -> androidx.constraintlayout.w
     96:96:void internalMeasureChildren(int,int):0 -> onMeasure
     96:96:void onMeasure(int,int):0 -> onMeasure
     97:97:void onMeasure(int,int):0:0 -> onMeasure
-    1:1:void androidx.constraintlayout.solver.widgets.WidgetContainer.remove(androidx.constraintlayout.solver.widgets.ConstraintWidget):0:0 -> onViewRemoved
-    1:1:void onViewRemoved(android.view.View):0 -> onViewRemoved
-    2:2:void androidx.constraintlayout.solver.widgets.ConstraintWidget.setParent(androidx.constraintlayout.solver.widgets.ConstraintWidget):0:0 -> onViewRemoved
-    2:2:void androidx.constraintlayout.solver.widgets.WidgetContainer.remove(androidx.constraintlayout.solver.widgets.ConstraintWidget):0 -> onViewRemoved
-    2:2:void onViewRemoved(android.view.View):0 -> onViewRemoved
-    3:3:void onViewRemoved(android.view.View):0:0 -> onViewRemoved
     1:1:void androidx.constraintlayout.solver.widgets.ConstraintWidgetContainer.setOptimizationLevel(int):0:0 -> setOptimizationLevel
     1:1:void setOptimizationLevel(int):0 -> setOptimizationLevel
 androidx.constraintlayout.widget.ConstraintLayout$LayoutParams -> androidx.constraintlayout.widget.ConstraintLayout$a:
@@ -8541,13 +8459,11 @@ androidx.core.view.ViewCompat -> a.e.h.n:
     1:1:java.lang.Object androidx.core.view.WindowInsetsCompat.unwrap(androidx.core.view.WindowInsetsCompat):0:0 -> a
     1:1:androidx.core.view.WindowInsetsCompat onApplyWindowInsets(android.view.View,androidx.core.view.WindowInsetsCompat):0 -> a
     2:2:androidx.core.view.WindowInsetsCompat onApplyWindowInsets(android.view.View,androidx.core.view.WindowInsetsCompat):0:0 -> a
-    3:3:androidx.core.view.WindowInsetsCompat androidx.core.view.WindowInsetsCompat.wrap(java.lang.Object):0:0 -> a
-    3:3:androidx.core.view.WindowInsetsCompat onApplyWindowInsets(android.view.View,androidx.core.view.WindowInsetsCompat):0 -> a
     void postOnAnimation(android.view.View,java.lang.Runnable) -> a
     void postOnAnimationDelayed(android.view.View,java.lang.Runnable,long) -> a
-    4:4:android.view.View$AccessibilityDelegate androidx.core.view.AccessibilityDelegateCompat.getBridge():0:0 -> a
-    4:4:void setAccessibilityDelegate(android.view.View,androidx.core.view.AccessibilityDelegateCompat):0 -> a
-    5:5:void setAccessibilityDelegate(android.view.View,androidx.core.view.AccessibilityDelegateCompat):0:0 -> a
+    3:3:android.view.View$AccessibilityDelegate androidx.core.view.AccessibilityDelegateCompat.getBridge():0:0 -> a
+    3:3:void setAccessibilityDelegate(android.view.View,androidx.core.view.AccessibilityDelegateCompat):0 -> a
+    4:4:void setAccessibilityDelegate(android.view.View,androidx.core.view.AccessibilityDelegateCompat):0:0 -> a
     void setBackground(android.view.View,android.graphics.drawable.Drawable) -> a
     void setBackgroundTintList(android.view.View,android.content.res.ColorStateList) -> a
     void setBackgroundTintMode(android.view.View,android.graphics.PorterDuff$Mode) -> a
@@ -8572,12 +8488,9 @@ androidx.core.view.ViewCompat -> a.e.h.n:
     void stopNestedScroll(android.view.View) -> n
 androidx.core.view.ViewCompat$1 -> a.e.h.m:
     androidx.core.view.OnApplyWindowInsetsListener val$listener -> a
-    1:1:androidx.core.view.WindowInsetsCompat androidx.core.view.WindowInsetsCompat.wrap(java.lang.Object):0:0 -> onApplyWindowInsets
+    1:1:java.lang.Object androidx.core.view.WindowInsetsCompat.unwrap(androidx.core.view.WindowInsetsCompat):0:0 -> onApplyWindowInsets
     1:1:android.view.WindowInsets onApplyWindowInsets(android.view.View,android.view.WindowInsets):0 -> onApplyWindowInsets
     2:2:android.view.WindowInsets onApplyWindowInsets(android.view.View,android.view.WindowInsets):0:0 -> onApplyWindowInsets
-    3:3:java.lang.Object androidx.core.view.WindowInsetsCompat.unwrap(androidx.core.view.WindowInsetsCompat):0:0 -> onApplyWindowInsets
-    3:3:android.view.WindowInsets onApplyWindowInsets(android.view.View,android.view.WindowInsets):0 -> onApplyWindowInsets
-    4:4:android.view.WindowInsets onApplyWindowInsets(android.view.View,android.view.WindowInsets):0:0 -> onApplyWindowInsets
 androidx.core.view.ViewCompat$OnUnhandledKeyEventListenerCompat -> a.e.h.n$a:
 androidx.core.view.ViewCompat$UnhandledKeyEventManager -> a.e.h.n$b:
     android.util.SparseArray mCapturedKeys -> c
@@ -8626,6 +8539,7 @@ androidx.core.view.ViewPropertyAnimatorUpdateListener -> a.e.h.u:
 androidx.core.view.WindowInsetsCompat -> a.e.h.v:
     java.lang.Object mInsets -> a
     int getSystemWindowInsetTop() -> a
+    androidx.core.view.WindowInsetsCompat wrap(java.lang.Object) -> a
 androidx.core.view.accessibility.AccessibilityNodeInfoCompat -> a.e.h.a.a:
     android.view.accessibility.AccessibilityNodeInfo mInfo -> a
     1:1:void getBoundsInParent(android.graphics.Rect):0:0 -> toString
@@ -8733,15 +8647,17 @@ androidx.core.widget.AutoScrollHelper -> a.e.i.a:
     float constrain(float,float,float) -> a
     int constrain(int,int,int) -> a
     float constrainEdgeValue(float,float) -> a
-    void requestStop() -> b
-    1:1:int androidx.core.widget.AutoScrollHelper$ClampedScroller.getVerticalDirection():0:0 -> c
-    1:1:boolean shouldAnimate():0 -> c
-    2:2:int androidx.core.widget.AutoScrollHelper$ClampedScroller.getHorizontalDirection():0:0 -> c
-    2:2:boolean shouldAnimate():0 -> c
-    3:3:boolean shouldAnimate():0:0 -> c
-    4:4:boolean androidx.core.widget.ListViewAutoScrollHelper.canTargetScrollVertically(int):0:0 -> c
-    4:4:boolean shouldAnimate():0 -> c
-    5:5:boolean shouldAnimate():0:0 -> c
+    3:3:void requestStop():0:0 -> a
+    3:3:androidx.core.widget.AutoScrollHelper setEnabled(boolean):0 -> a
+    4:4:androidx.core.widget.AutoScrollHelper setEnabled(boolean):0:0 -> a
+    1:1:int androidx.core.widget.AutoScrollHelper$ClampedScroller.getVerticalDirection():0:0 -> b
+    1:1:boolean shouldAnimate():0 -> b
+    2:2:int androidx.core.widget.AutoScrollHelper$ClampedScroller.getHorizontalDirection():0:0 -> b
+    2:2:boolean shouldAnimate():0 -> b
+    3:3:boolean shouldAnimate():0:0 -> b
+    4:4:boolean androidx.core.widget.ListViewAutoScrollHelper.canTargetScrollVertically(int):0:0 -> b
+    4:4:boolean shouldAnimate():0 -> b
+    5:5:boolean shouldAnimate():0:0 -> b
     1:1:void requestStop():0:0 -> onTouch
     1:1:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
     2:2:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
@@ -9102,20 +9018,17 @@ androidx.fragment.app.BackStackRecord -> a.h.a.a:
     java.util.ArrayList mCommitRunnables -> t
     java.util.ArrayList mSharedElementTargetNames -> r
     java.util.ArrayList mSharedElementSourceNames -> q
+    void addOp(androidx.fragment.app.BackStackRecord$Op) -> a
     void bumpBackStackNesting(int) -> a
+    void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]) -> a
     void dump(java.lang.String,java.io.PrintWriter,boolean) -> a
-    1:1:void androidx.fragment.app.Fragment.setNextTransition(int,int):0:0 -> a
-    1:1:void executeOps():0 -> a
-    2:2:void executeOps():0:0 -> a
-    3:3:void androidx.fragment.app.Fragment.setNextTransition(int,int):0:0 -> a
-    3:3:void executePopOps(boolean):0 -> a
-    4:4:void executePopOps(boolean):0:0 -> a
-    5:5:void androidx.fragment.app.FragmentManagerImpl.addBackStackState(androidx.fragment.app.BackStackRecord):0:0 -> a
-    5:5:boolean generateOps(java.util.ArrayList,java.util.ArrayList):0 -> a
+    void executeOps() -> a
+    void executePopOps(boolean) -> a
+    1:1:void androidx.fragment.app.FragmentManagerImpl.addBackStackState(androidx.fragment.app.BackStackRecord):0:0 -> a
+    1:1:boolean generateOps(java.util.ArrayList,java.util.ArrayList):0 -> a
     boolean interactsWith(java.util.ArrayList,int,int) -> a
-    6:6:boolean androidx.fragment.app.Fragment.isPostponed():0:0 -> a
-    6:6:boolean isFragmentPostponed(androidx.fragment.app.BackStackRecord$Op):0 -> a
     boolean interactsWith(int) -> b
+    boolean isFragmentPostponed(androidx.fragment.app.BackStackRecord$Op) -> b
 androidx.fragment.app.BackStackRecord$Op -> a.h.a.a$a:
     int popExitAnim -> f
     androidx.fragment.app.Fragment fragment -> b
@@ -9136,9 +9049,7 @@ androidx.fragment.app.BackStackState -> a.h.a.c:
     int mTransitionStyle -> c
     java.lang.CharSequence mBreadCrumbShortTitleText -> i
     java.lang.String mName -> d
-    1:1:void androidx.fragment.app.BackStackRecord.addOp(androidx.fragment.app.BackStackRecord$Op):0:0 -> a
-    1:1:androidx.fragment.app.BackStackRecord instantiate(androidx.fragment.app.FragmentManagerImpl):0 -> a
-    2:2:androidx.fragment.app.BackStackRecord instantiate(androidx.fragment.app.FragmentManagerImpl):0:0 -> a
+    androidx.fragment.app.BackStackRecord instantiate(androidx.fragment.app.FragmentManagerImpl) -> a
 androidx.fragment.app.BackStackState$1 -> a.h.a.b:
     1:1:androidx.fragment.app.BackStackState createFromParcel(android.os.Parcel):0:0 -> createFromParcel
     1:1:java.lang.Object createFromParcel(android.os.Parcel):0 -> createFromParcel
@@ -9195,83 +9106,145 @@ androidx.fragment.app.Fragment -> a.h.a.g:
     androidx.fragment.app.FragmentManagerImpl mFragmentManager -> t
     boolean mRetaining -> F
     android.util.SparseArray mSavedViewState -> e
+    void initState() -> A
+    1:1:void androidx.fragment.app.FragmentManagerImpl.attachController(androidx.fragment.app.FragmentHostCallback,androidx.fragment.app.FragmentContainer,androidx.fragment.app.Fragment):0:0 -> B
+    1:1:void instantiateChildFragmentManager():0 -> B
+    2:2:void instantiateChildFragmentManager():0:0 -> B
+    boolean isHideReplaced() -> C
+    boolean isInBackStack() -> D
+    boolean isPostponed() -> E
+    boolean isStateSaved() -> F
+    void noteStateNotSaved() -> G
+    void onDestroy() -> H
+    void onDestroyOptionsMenu() -> I
+    void onDestroyView() -> J
+    void onDetach() -> K
+    void onPause() -> L
+    void onResume() -> M
+    void onStart() -> N
+    void onStop() -> O
+    androidx.fragment.app.FragmentManager peekChildFragmentManager() -> P
+    void performDestroy() -> Q
+    1:1:void androidx.fragment.app.FragmentManagerImpl.dispatchDestroyView():0:0 -> R
+    1:1:void performDestroyView():0 -> R
+    2:2:void performDestroyView():0:0 -> R
+    3:3:void androidx.loader.app.LoaderManagerImpl.markForRedelivery():0:0 -> R
+    3:3:void performDestroyView():0 -> R
+    4:4:void performDestroyView():0:0 -> R
+    void performDetach() -> S
+    void performLowMemory() -> T
+    1:1:void androidx.fragment.app.FragmentManagerImpl.dispatchPause():0:0 -> U
+    1:1:void performPause():0 -> U
+    2:2:void performPause():0:0 -> U
+    void performResume() -> V
+    void performStart() -> W
+    1:1:void androidx.fragment.app.FragmentManagerImpl.dispatchStop():0:0 -> X
+    1:1:void performStop():0 -> X
+    2:2:void performStop():0:0 -> X
+    android.content.Context requireContext() -> Y
+    1:1:android.os.Handler androidx.fragment.app.FragmentHostCallback.getHandler():0:0 -> Z
+    1:1:void startPostponedEnterTransition():0 -> Z
+    2:2:void startPostponedEnterTransition():0:0 -> Z
+    3:3:android.os.Handler androidx.fragment.app.FragmentHostCallback.getHandler():0:0 -> Z
+    3:3:void startPostponedEnterTransition():0 -> Z
+    4:4:void startPostponedEnterTransition():0:0 -> Z
+    1:1:void androidx.loader.app.LoaderManagerImpl.dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]):0:0 -> a
+    1:1:void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]):0 -> a
+    2:2:void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]):0:0 -> a
     androidx.fragment.app.Fragment findFragmentByWho(java.lang.String) -> a
+    3:3:android.view.LayoutInflater androidx.fragment.app.FragmentActivity$HostCallbacks.onGetLayoutInflater():0:0 -> a
+    3:3:android.view.LayoutInflater getLayoutInflater(android.os.Bundle):0 -> a
+    4:4:android.view.LayoutInflater getLayoutInflater(android.os.Bundle):0:0 -> a
+    5:5:void androidx.core.view.LayoutInflaterCompat.setFactory2(android.view.LayoutInflater,android.view.LayoutInflater$Factory2):0:0 -> a
+    5:5:android.view.LayoutInflater getLayoutInflater(android.os.Bundle):0 -> a
+    6:6:android.view.LayoutInflater getLayoutInflater(android.os.Bundle):0:0 -> a
     androidx.lifecycle.Lifecycle getLifecycle() -> a
     androidx.fragment.app.Fragment instantiate(android.content.Context,java.lang.String,android.os.Bundle) -> a
     boolean isSupportFragmentClass(android.content.Context,java.lang.String) -> a
-    1:1:android.app.Activity androidx.fragment.app.FragmentHostCallback.getActivity():0:0 -> a
-    1:1:void onInflate(android.content.Context,android.util.AttributeSet,android.os.Bundle):0 -> a
-    2:2:void onInflate(android.content.Context,android.util.AttributeSet,android.os.Bundle):0:0 -> a
-    3:3:void onInflate(android.app.Activity,android.util.AttributeSet,android.os.Bundle):0:0 -> a
-    3:3:void onInflate(android.content.Context,android.util.AttributeSet,android.os.Bundle):0 -> a
-    boolean performCreateOptionsMenu(android.view.Menu,android.view.MenuInflater) -> a
-    void performCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
-    4:4:android.view.LayoutInflater getLayoutInflater(android.os.Bundle):0:0 -> a
-    4:4:android.view.LayoutInflater onGetLayoutInflater(android.os.Bundle):0 -> a
-    4:4:android.view.LayoutInflater performGetLayoutInflater(android.os.Bundle):0 -> a
-    5:5:android.view.LayoutInflater androidx.fragment.app.FragmentActivity$HostCallbacks.onGetLayoutInflater():0:0 -> a
-    5:5:android.view.LayoutInflater getLayoutInflater(android.os.Bundle):0 -> a
-    5:5:android.view.LayoutInflater onGetLayoutInflater(android.os.Bundle):0 -> a
-    5:5:android.view.LayoutInflater performGetLayoutInflater(android.os.Bundle):0 -> a
-    6:6:androidx.fragment.app.FragmentManager getChildFragmentManager():0:0 -> a
-    6:6:android.view.LayoutInflater getLayoutInflater(android.os.Bundle):0 -> a
-    6:6:android.view.LayoutInflater onGetLayoutInflater(android.os.Bundle):0 -> a
-    6:6:android.view.LayoutInflater performGetLayoutInflater(android.os.Bundle):0 -> a
-    7:7:android.view.LayoutInflater getLayoutInflater(android.os.Bundle):0:0 -> a
-    7:7:android.view.LayoutInflater onGetLayoutInflater(android.os.Bundle):0 -> a
-    7:7:android.view.LayoutInflater performGetLayoutInflater(android.os.Bundle):0 -> a
-    8:8:android.view.LayoutInflater performGetLayoutInflater(android.os.Bundle):0:0 -> a
-    9:9:android.view.LayoutInflater getLayoutInflater(android.os.Bundle):0:0 -> a
-    9:9:android.view.LayoutInflater onGetLayoutInflater(android.os.Bundle):0 -> a
-    9:9:android.view.LayoutInflater performGetLayoutInflater(android.os.Bundle):0 -> a
-    void performMultiWindowModeChanged(boolean) -> a
-    boolean performPrepareOptionsMenu(android.view.Menu) -> a
+    void onActivityResult(int,int,android.content.Intent) -> a
+    void onAttach(android.app.Activity) -> a
+    7:7:android.app.Activity androidx.fragment.app.FragmentHostCallback.getActivity():0:0 -> a
+    7:7:void onAttach(android.content.Context):0 -> a
+    8:8:void onAttach(android.content.Context):0:0 -> a
+    void onAttachFragment(androidx.fragment.app.Fragment) -> a
+    boolean onContextItemSelected(android.view.MenuItem) -> a
+    android.view.animation.Animation onCreateAnimation(int,boolean,int) -> a
+    void onCreateOptionsMenu(android.view.Menu,android.view.MenuInflater) -> a
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+    void onHiddenChanged(boolean) -> a
+    void onInflate(android.app.Activity,android.util.AttributeSet,android.os.Bundle) -> a
+    9:9:android.app.Activity androidx.fragment.app.FragmentHostCallback.getActivity():0:0 -> a
+    9:9:void onInflate(android.content.Context,android.util.AttributeSet,android.os.Bundle):0 -> a
+    10:10:void onInflate(android.content.Context,android.util.AttributeSet,android.os.Bundle):0:0 -> a
+    void onOptionsMenuClosed(android.view.Menu) -> a
+    void onRequestPermissionsResult(int,java.lang.String[],int[]) -> a
+    void onViewCreated(android.view.View,android.os.Bundle) -> a
+    void performConfigurationChanged(android.content.res.Configuration) -> a
     void setAnimatingAway(android.view.View) -> a
     void setAnimator(android.animation.Animator) -> a
     void setIndex(int,androidx.fragment.app.Fragment) -> a
     void setNextAnim(int) -> a
-    10:10:void androidx.fragment.app.FragmentManagerImpl$StartEnterTransitionListener.startListening():0:0 -> a
-    10:10:void setOnStartEnterTransitionListener(androidx.fragment.app.Fragment$OnStartEnterTransitionListener):0 -> a
+    void setNextTransition(int,int) -> a
+    11:11:void androidx.fragment.app.FragmentManagerImpl$StartEnterTransitionListener.startListening():0:0 -> a
+    11:11:void setOnStartEnterTransitionListener(androidx.fragment.app.Fragment$OnStartEnterTransitionListener):0 -> a
     androidx.lifecycle.ViewModelStore getViewModelStore() -> b
-    void performPictureInPictureModeChanged(boolean) -> b
-    void restoreChildFragmentState(android.os.Bundle) -> b
+    void onActivityCreated(android.os.Bundle) -> b
+    android.animation.Animator onCreateAnimator(int,boolean,int) -> b
+    void onMultiWindowModeChanged(boolean) -> b
+    boolean onOptionsItemSelected(android.view.MenuItem) -> b
+    void onPrepareOptionsMenu(android.view.Menu) -> b
+    boolean performCreateOptionsMenu(android.view.Menu,android.view.MenuInflater) -> b
+    void performCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> b
+    void setStateAfterAnimating(int) -> b
     1:1:void androidx.fragment.app.FragmentManagerImpl$StartEnterTransitionListener.onStartEnterTransition():0:0 -> c
     1:1:void callStartTransitionListener():0 -> c
-    2:2:boolean isStateSaved():0:0 -> c
-    2:2:void setArguments(android.os.Bundle):0 -> c
-    3:3:void setArguments(android.os.Bundle):0:0 -> c
-    void setHideReplaced(boolean) -> c
+    2:2:boolean androidx.fragment.app.FragmentManagerImpl.isStateAtLeast(int):0:0 -> c
+    2:2:void onCreate(android.os.Bundle):0 -> c
+    3:3:void onCreate(android.os.Bundle):0:0 -> c
+    void onPictureInPictureModeChanged(boolean) -> c
+    boolean performContextItemSelected(android.view.MenuItem) -> c
+    void performOptionsMenuClosed(android.view.Menu) -> c
     androidx.fragment.app.Fragment$AnimationInfo ensureAnimationInfo() -> d
-    android.view.View getAnimatingAway() -> e
-    android.animation.Animator getAnimator() -> f
-    1:1:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> g
-    1:1:android.content.Context getContext():0 -> g
-    java.lang.Object getEnterTransition() -> h
-    androidx.core.app.SharedElementCallback getEnterTransitionCallback() -> i
-    java.lang.Object getExitTransition() -> j
-    int getNextAnim() -> k
-    int getNextTransition() -> l
-    int getNextTransitionStyle() -> m
-    java.lang.Object getSharedElementEnterTransition() -> n
-    int getStateAfterAnimating() -> o
-    1:1:androidx.fragment.app.FragmentActivity getActivity():0:0 -> onCreateContextMenu
-    1:1:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo):0 -> onCreateContextMenu
-    2:2:android.app.Activity androidx.fragment.app.FragmentHostCallback.getActivity():0:0 -> onCreateContextMenu
-    2:2:androidx.fragment.app.FragmentActivity getActivity():0 -> onCreateContextMenu
-    2:2:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo):0 -> onCreateContextMenu
-    3:3:androidx.fragment.app.FragmentActivity getActivity():0:0 -> onCreateContextMenu
-    3:3:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo):0 -> onCreateContextMenu
-    4:4:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo):0:0 -> onCreateContextMenu
-    1:1:void androidx.fragment.app.FragmentManagerImpl.attachController(androidx.fragment.app.FragmentHostCallback,androidx.fragment.app.FragmentContainer,androidx.fragment.app.Fragment):0:0 -> p
-    1:1:void instantiateChildFragmentManager():0 -> p
-    2:2:void instantiateChildFragmentManager():0:0 -> p
-    boolean isHideReplaced() -> q
-    boolean isInBackStack() -> r
-    void onDestroyOptionsMenu() -> s
-    androidx.fragment.app.FragmentManager peekChildFragmentManager() -> t
-    1:1:void onLowMemory():0:0 -> u
-    1:1:void performLowMemory():0 -> u
-    2:2:void performLowMemory():0:0 -> u
+    android.view.LayoutInflater onGetLayoutInflater(android.os.Bundle) -> d
+    void performMultiWindowModeChanged(boolean) -> d
+    boolean performOptionsItemSelected(android.view.MenuItem) -> d
+    boolean performPrepareOptionsMenu(android.view.Menu) -> d
+    1:1:android.app.Activity androidx.fragment.app.FragmentHostCallback.getActivity():0:0 -> e
+    1:1:androidx.fragment.app.FragmentActivity getActivity():0 -> e
+    2:2:androidx.fragment.app.FragmentActivity getActivity():0:0 -> e
+    void onSaveInstanceState(android.os.Bundle) -> e
+    void performPictureInPictureModeChanged(boolean) -> e
+    boolean getAllowEnterTransitionOverlap() -> f
+    void onViewStateRestored(android.os.Bundle) -> f
+    void setHideReplaced(boolean) -> f
+    boolean getAllowReturnTransitionOverlap() -> g
+    void performActivityCreated(android.os.Bundle) -> g
+    android.view.View getAnimatingAway() -> h
+    void performCreate(android.os.Bundle) -> h
+    android.animation.Animator getAnimator() -> i
+    android.view.LayoutInflater performGetLayoutInflater(android.os.Bundle) -> i
+    androidx.fragment.app.FragmentManager getChildFragmentManager() -> j
+    void performSaveInstanceState(android.os.Bundle) -> j
+    1:1:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> k
+    1:1:android.content.Context getContext():0 -> k
+    void restoreChildFragmentState(android.os.Bundle) -> k
+    java.lang.Object getEnterTransition() -> l
+    void restoreViewState(android.os.Bundle) -> l
+    androidx.core.app.SharedElementCallback getEnterTransitionCallback() -> m
+    void setArguments(android.os.Bundle) -> m
+    java.lang.Object getExitTransition() -> n
+    androidx.core.app.SharedElementCallback getExitTransitionCallback() -> o
+    androidx.fragment.app.FragmentManager getFragmentManager() -> p
+    int getNextAnim() -> q
+    int getNextTransition() -> r
+    int getNextTransitionStyle() -> s
+    java.lang.Object getReenterTransition() -> t
+    android.content.res.Resources getResources() -> u
+    java.lang.Object getReturnTransition() -> v
+    java.lang.Object getSharedElementEnterTransition() -> w
+    java.lang.Object getSharedElementReturnTransition() -> x
+    int getStateAfterAnimating() -> y
+    android.view.View getView() -> z
 androidx.fragment.app.Fragment$1 -> a.h.a.d:
     androidx.fragment.app.Fragment this$0 -> a
 androidx.fragment.app.Fragment$2 -> a.h.a.e:
@@ -9323,19 +9296,15 @@ androidx.fragment.app.FragmentActivity -> a.h.a.i:
     1:1:android.view.View dispatchFragmentsOnCreateView(android.view.View,java.lang.String,android.content.Context,android.util.AttributeSet):0 -> a
     2:2:androidx.lifecycle.Lifecycle androidx.core.app.ComponentActivity.getLifecycle():0:0 -> a
     2:2:androidx.lifecycle.Lifecycle getLifecycle():0 -> a
-    3:3:androidx.lifecycle.Lifecycle androidx.fragment.app.Fragment.getLifecycle():0:0 -> a
+    3:3:androidx.lifecycle.Lifecycle$State androidx.lifecycle.LifecycleRegistry.getCurrentState():0:0 -> a
     3:3:boolean markState(androidx.fragment.app.FragmentManager,androidx.lifecycle.Lifecycle$State):0 -> a
-    4:4:androidx.lifecycle.Lifecycle$State androidx.lifecycle.LifecycleRegistry.getCurrentState():0:0 -> a
-    4:4:boolean markState(androidx.fragment.app.FragmentManager,androidx.lifecycle.Lifecycle$State):0 -> a
-    5:5:boolean markState(androidx.fragment.app.FragmentManager,androidx.lifecycle.Lifecycle$State):0:0 -> a
-    6:6:boolean androidx.lifecycle.Lifecycle$State.isAtLeast(androidx.lifecycle.Lifecycle$State):0:0 -> a
-    6:6:boolean markState(androidx.fragment.app.FragmentManager,androidx.lifecycle.Lifecycle$State):0 -> a
-    7:7:boolean markState(androidx.fragment.app.FragmentManager,androidx.lifecycle.Lifecycle$State):0:0 -> a
-    8:8:void androidx.lifecycle.LifecycleRegistry.markState(androidx.lifecycle.Lifecycle$State):0:0 -> a
-    8:8:boolean markState(androidx.fragment.app.FragmentManager,androidx.lifecycle.Lifecycle$State):0 -> a
-    9:9:androidx.fragment.app.FragmentManager androidx.fragment.app.Fragment.peekChildFragmentManager():0:0 -> a
-    9:9:boolean markState(androidx.fragment.app.FragmentManager,androidx.lifecycle.Lifecycle$State):0 -> a
-    10:10:boolean markState(androidx.fragment.app.FragmentManager,androidx.lifecycle.Lifecycle$State):0:0 -> a
+    4:4:boolean markState(androidx.fragment.app.FragmentManager,androidx.lifecycle.Lifecycle$State):0:0 -> a
+    5:5:boolean androidx.lifecycle.Lifecycle$State.isAtLeast(androidx.lifecycle.Lifecycle$State):0:0 -> a
+    5:5:boolean markState(androidx.fragment.app.FragmentManager,androidx.lifecycle.Lifecycle$State):0 -> a
+    6:6:boolean markState(androidx.fragment.app.FragmentManager,androidx.lifecycle.Lifecycle$State):0:0 -> a
+    7:7:void androidx.lifecycle.LifecycleRegistry.markState(androidx.lifecycle.Lifecycle$State):0:0 -> a
+    7:7:boolean markState(androidx.fragment.app.FragmentManager,androidx.lifecycle.Lifecycle$State):0 -> a
+    8:8:boolean markState(androidx.fragment.app.FragmentManager,androidx.lifecycle.Lifecycle$State):0:0 -> a
     void onAttachFragment(androidx.fragment.app.Fragment) -> a
     boolean onPrepareOptionsPanel(android.view.View,android.view.Menu) -> a
     androidx.lifecycle.ViewModelStore getViewModelStore() -> b
@@ -9442,10 +9411,11 @@ androidx.fragment.app.FragmentHostCallback -> a.h.a.l:
     1:1:void <init>(android.app.Activity,android.content.Context,android.os.Handler,int):0:0 -> <init>
     1:1:void <init>(androidx.fragment.app.FragmentActivity):0 -> <init>
 androidx.fragment.app.FragmentManager -> a.h.a.m:
+    androidx.fragment.app.FragmentTransaction beginTransaction() -> a
     void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]) -> a
-    java.util.List getFragments() -> a
-    boolean isStateSaved() -> b
-    boolean popBackStackImmediate() -> c
+    java.util.List getFragments() -> b
+    boolean isStateSaved() -> c
+    boolean popBackStackImmediate() -> d
 androidx.fragment.app.FragmentManager$BackStackEntry -> a.h.a.m$a:
 androidx.fragment.app.FragmentManager$FragmentLifecycleCallbacks -> a.h.a.m$b:
 androidx.fragment.app.FragmentManager$OnBackStackChangedListener -> a.h.a.m$c:
@@ -9488,86 +9458,90 @@ androidx.fragment.app.FragmentManagerImpl -> a.h.a.t:
     1:1:void moveToState(androidx.fragment.app.Fragment):0:0 -> a
     1:1:void addFragment(androidx.fragment.app.Fragment,boolean):0 -> a
     2:2:void addFragment(androidx.fragment.app.Fragment,boolean):0:0 -> a
+    int allocBackStackIndex(androidx.fragment.app.BackStackRecord) -> a
     void attachController(androidx.fragment.app.FragmentHostCallback,androidx.fragment.app.FragmentContainer,androidx.fragment.app.Fragment) -> a
     void attachFragment(androidx.fragment.app.Fragment) -> a
+    androidx.fragment.app.FragmentTransaction beginTransaction() -> a
     void completeExecute(androidx.fragment.app.BackStackRecord,boolean,boolean,boolean) -> a
-    3:3:void androidx.fragment.app.Fragment.onConfigurationChanged(android.content.res.Configuration):0:0 -> a
-    3:3:void androidx.fragment.app.Fragment.performConfigurationChanged(android.content.res.Configuration):0 -> a
-    3:3:void dispatchConfigurationChanged(android.content.res.Configuration):0 -> a
-    4:4:void androidx.fragment.app.Fragment.performConfigurationChanged(android.content.res.Configuration):0:0 -> a
-    4:4:void dispatchConfigurationChanged(android.content.res.Configuration):0 -> a
-    5:5:boolean androidx.fragment.app.Fragment.performContextItemSelected(android.view.MenuItem):0:0 -> a
-    5:5:boolean dispatchContextItemSelected(android.view.MenuItem):0 -> a
+    void dispatchConfigurationChanged(android.content.res.Configuration) -> a
+    boolean dispatchContextItemSelected(android.view.MenuItem) -> a
     boolean dispatchCreateOptionsMenu(android.view.Menu,android.view.MenuInflater) -> a
     void dispatchMultiWindowModeChanged(boolean) -> a
-    6:6:androidx.fragment.app.FragmentManager androidx.fragment.app.Fragment.getFragmentManager():0:0 -> a
-    6:6:void dispatchOnFragmentActivityCreated(androidx.fragment.app.Fragment,android.os.Bundle,boolean):0 -> a
-    7:7:void dispatchOnFragmentActivityCreated(androidx.fragment.app.Fragment,android.os.Bundle,boolean):0:0 -> a
-    8:8:androidx.fragment.app.FragmentManager androidx.fragment.app.Fragment.getFragmentManager():0:0 -> a
-    8:8:void dispatchOnFragmentAttached(androidx.fragment.app.Fragment,android.content.Context,boolean):0 -> a
-    9:9:void dispatchOnFragmentAttached(androidx.fragment.app.Fragment,android.content.Context,boolean):0:0 -> a
-    10:10:androidx.fragment.app.FragmentManager androidx.fragment.app.Fragment.getFragmentManager():0:0 -> a
-    10:10:void dispatchOnFragmentViewCreated(androidx.fragment.app.Fragment,android.view.View,android.os.Bundle,boolean):0 -> a
-    11:11:void dispatchOnFragmentViewCreated(androidx.fragment.app.Fragment,android.view.View,android.os.Bundle,boolean):0:0 -> a
-    12:12:void androidx.fragment.app.Fragment.performOptionsMenuClosed(android.view.Menu):0:0 -> a
-    12:12:void dispatchOptionsMenuClosed(android.view.Menu):0 -> a
+    void dispatchOnFragmentActivityCreated(androidx.fragment.app.Fragment,android.os.Bundle,boolean) -> a
+    void dispatchOnFragmentAttached(androidx.fragment.app.Fragment,android.content.Context,boolean) -> a
+    void dispatchOnFragmentViewCreated(androidx.fragment.app.Fragment,android.view.View,android.os.Bundle,boolean) -> a
+    void dispatchOptionsMenuClosed(android.view.Menu) -> a
     void dispatchStateChange(int) -> a
-    13:13:void androidx.fragment.app.Fragment.dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]):0:0 -> a
-    13:13:void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]):0 -> a
-    14:14:void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]):0:0 -> a
-    15:15:void androidx.fragment.app.BackStackRecord.dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]):0:0 -> a
-    15:15:void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]):0 -> a
-    16:16:void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]):0:0 -> a
-    17:17:androidx.fragment.app.Fragment getPrimaryNavigationFragment():0:0 -> a
+    3:3:void androidx.fragment.app.BackStackRecord.dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]):0:0 -> a
+    3:3:void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]):0 -> a
+    4:4:void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]):0:0 -> a
+    void enqueueAction(androidx.fragment.app.FragmentManagerImpl$OpGenerator,boolean) -> a
+    5:5:androidx.fragment.app.Fragment getPrimaryNavigationFragment():0:0 -> a
+    5:5:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
+    6:6:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0:0 -> a
+    7:7:androidx.fragment.app.Fragment androidx.fragment.app.BackStackRecord.expandOps(java.util.ArrayList,androidx.fragment.app.Fragment):0:0 -> a
+    7:7:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
+    8:8:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0:0 -> a
+    9:9:androidx.fragment.app.Fragment androidx.fragment.app.BackStackRecord.trackAddedFragmentsInPop(java.util.ArrayList,androidx.fragment.app.Fragment):0:0 -> a
+    9:9:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
+    10:10:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0:0 -> a
+    11:11:void executeOps(java.util.ArrayList,java.util.ArrayList,int,int):0:0 -> a
+    11:11:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
+    12:12:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0:0 -> a
+    13:13:int postponePostponableTransactions(java.util.ArrayList,java.util.ArrayList,int,int,androidx.collection.ArraySet):0:0 -> a
+    13:13:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
+    14:14:boolean androidx.fragment.app.BackStackRecord.isPostponed():0:0 -> a
+    14:14:int postponePostponableTransactions(java.util.ArrayList,java.util.ArrayList,int,int,androidx.collection.ArraySet):0 -> a
+    14:14:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
+    15:15:int postponePostponableTransactions(java.util.ArrayList,java.util.ArrayList,int,int,androidx.collection.ArraySet):0:0 -> a
+    15:15:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
+    16:16:void androidx.fragment.app.BackStackRecord.setOnStartPostponedListener(androidx.fragment.app.Fragment$OnStartEnterTransitionListener):0:0 -> a
+    16:16:int postponePostponableTransactions(java.util.ArrayList,java.util.ArrayList,int,int,androidx.collection.ArraySet):0 -> a
+    16:16:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
+    17:17:int postponePostponableTransactions(java.util.ArrayList,java.util.ArrayList,int,int,androidx.collection.ArraySet):0:0 -> a
     17:17:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
-    18:18:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0:0 -> a
-    19:19:androidx.fragment.app.Fragment androidx.fragment.app.BackStackRecord.expandOps(java.util.ArrayList,androidx.fragment.app.Fragment):0:0 -> a
+    18:18:void makeRemovedFragmentsInvisible(androidx.collection.ArraySet):0:0 -> a
+    18:18:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
+    19:19:java.lang.Object androidx.collection.ArraySet.valueAt(int):0:0 -> a
+    19:19:void makeRemovedFragmentsInvisible(androidx.collection.ArraySet):0 -> a
     19:19:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
-    20:20:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0:0 -> a
-    21:21:androidx.fragment.app.Fragment androidx.fragment.app.BackStackRecord.trackAddedFragmentsInPop(java.util.ArrayList,androidx.fragment.app.Fragment):0:0 -> a
-    21:21:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
-    22:22:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0:0 -> a
-    23:23:void executeOps(java.util.ArrayList,java.util.ArrayList,int,int):0:0 -> a
+    20:20:void makeRemovedFragmentsInvisible(androidx.collection.ArraySet):0:0 -> a
+    20:20:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
+    21:21:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0:0 -> a
+    22:22:void androidx.fragment.app.BackStackRecord.runOnCommitRunnables():0:0 -> a
+    22:22:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
+    23:23:void reportBackStackChanged():0:0 -> a
     23:23:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
-    24:24:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0:0 -> a
-    25:25:int postponePostponableTransactions(java.util.ArrayList,java.util.ArrayList,int,int,androidx.collection.ArraySet):0:0 -> a
-    25:25:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
-    26:26:boolean androidx.fragment.app.BackStackRecord.isPostponed():0:0 -> a
-    26:26:int postponePostponableTransactions(java.util.ArrayList,java.util.ArrayList,int,int,androidx.collection.ArraySet):0 -> a
-    26:26:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
-    27:27:int postponePostponableTransactions(java.util.ArrayList,java.util.ArrayList,int,int,androidx.collection.ArraySet):0:0 -> a
-    27:27:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
-    28:28:void androidx.fragment.app.BackStackRecord.setOnStartPostponedListener(androidx.fragment.app.Fragment$OnStartEnterTransitionListener):0:0 -> a
-    28:28:int postponePostponableTransactions(java.util.ArrayList,java.util.ArrayList,int,int,androidx.collection.ArraySet):0 -> a
-    28:28:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
-    29:29:int postponePostponableTransactions(java.util.ArrayList,java.util.ArrayList,int,int,androidx.collection.ArraySet):0:0 -> a
-    29:29:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
-    30:30:void makeRemovedFragmentsInvisible(androidx.collection.ArraySet):0:0 -> a
-    30:30:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
-    31:31:java.lang.Object androidx.collection.ArraySet.valueAt(int):0:0 -> a
-    31:31:void makeRemovedFragmentsInvisible(androidx.collection.ArraySet):0 -> a
-    31:31:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
-    32:32:void makeRemovedFragmentsInvisible(androidx.collection.ArraySet):0:0 -> a
-    32:32:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
-    33:33:android.view.View androidx.fragment.app.Fragment.getView():0:0 -> a
-    33:33:void makeRemovedFragmentsInvisible(androidx.collection.ArraySet):0 -> a
-    33:33:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
-    34:34:void makeRemovedFragmentsInvisible(androidx.collection.ArraySet):0:0 -> a
-    34:34:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
-    35:35:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0:0 -> a
-    36:36:void androidx.fragment.app.BackStackRecord.runOnCommitRunnables():0:0 -> a
-    36:36:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
-    37:37:void reportBackStackChanged():0:0 -> a
-    37:37:void executeOpsTogether(java.util.ArrayList,java.util.ArrayList,int,int):0 -> a
-    38:38:boolean androidx.fragment.app.FragmentManagerImpl$StartEnterTransitionListener.isReady():0:0 -> a
-    38:38:void executePostponedTransaction(java.util.ArrayList,java.util.ArrayList):0 -> a
-    39:39:void executePostponedTransaction(java.util.ArrayList,java.util.ArrayList):0:0 -> a
-    40:40:void androidx.fragment.app.FragmentManagerImpl$StartEnterTransitionListener.cancelTransaction():0:0 -> a
-    40:40:void executePostponedTransaction(java.util.ArrayList,java.util.ArrayList):0 -> a
-    41:41:void executePostponedTransaction(java.util.ArrayList,java.util.ArrayList):0:0 -> a
+    24:24:boolean androidx.fragment.app.FragmentManagerImpl$StartEnterTransitionListener.isReady():0:0 -> a
+    24:24:void executePostponedTransaction(java.util.ArrayList,java.util.ArrayList):0 -> a
+    25:25:void executePostponedTransaction(java.util.ArrayList,java.util.ArrayList):0:0 -> a
+    26:26:void androidx.fragment.app.FragmentManagerImpl$StartEnterTransitionListener.cancelTransaction():0:0 -> a
+    26:26:void executePostponedTransaction(java.util.ArrayList,java.util.ArrayList):0 -> a
+    27:27:void executePostponedTransaction(java.util.ArrayList,java.util.ArrayList):0:0 -> a
     androidx.fragment.app.Fragment findFragmentByWho(java.lang.String) -> a
     android.view.animation.Animation$AnimationListener getAnimationListener(android.view.animation.Animation) -> a
-    java.util.List getFragments() -> a
+    28:28:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
+    28:28:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0 -> a
+    29:29:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0:0 -> a
+    30:30:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
+    30:30:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0 -> a
+    31:31:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0:0 -> a
+    32:32:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
+    32:32:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0 -> a
+    33:33:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0:0 -> a
+    34:34:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
+    34:34:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0 -> a
+    35:35:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0:0 -> a
+    36:36:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
+    36:36:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0 -> a
+    37:37:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator makeFadeAnimation(android.content.Context,float,float):0:0 -> a
+    37:37:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0 -> a
+    38:38:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0:0 -> a
+    39:39:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
+    39:39:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0 -> a
+    40:40:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator makeFadeAnimation(android.content.Context,float,float):0:0 -> a
+    40:40:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0 -> a
+    41:41:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0:0 -> a
     42:42:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
     42:42:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0 -> a
     43:43:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0:0 -> a
@@ -9580,374 +9554,145 @@ androidx.fragment.app.FragmentManagerImpl -> a.h.a.t:
     48:48:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
     48:48:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0 -> a
     49:49:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0:0 -> a
-    50:50:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
+    50:50:boolean androidx.fragment.app.FragmentActivity$HostCallbacks.onHasWindowAnimations():0:0 -> a
     50:50:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0 -> a
-    51:51:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator makeFadeAnimation(android.content.Context,float,float):0:0 -> a
-    51:51:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0 -> a
-    52:52:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0:0 -> a
-    53:53:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
-    53:53:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0 -> a
-    54:54:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator makeFadeAnimation(android.content.Context,float,float):0:0 -> a
-    54:54:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0 -> a
-    55:55:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0:0 -> a
-    56:56:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
-    56:56:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0 -> a
-    57:57:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0:0 -> a
-    58:58:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
-    58:58:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0 -> a
-    59:59:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0:0 -> a
-    60:60:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
-    60:60:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0 -> a
-    61:61:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0:0 -> a
-    62:62:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
-    62:62:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0 -> a
-    63:63:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0:0 -> a
-    64:64:boolean androidx.fragment.app.FragmentActivity$HostCallbacks.onHasWindowAnimations():0:0 -> a
-    64:64:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0 -> a
-    65:65:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0:0 -> a
-    66:66:int androidx.fragment.app.FragmentActivity$HostCallbacks.onGetWindowAnimations():0:0 -> a
-    66:66:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0 -> a
+    51:51:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0:0 -> a
+    52:52:int androidx.fragment.app.FragmentActivity$HostCallbacks.onGetWindowAnimations():0:0 -> a
+    52:52:androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator loadAnimation(androidx.fragment.app.Fragment,int,boolean,int):0 -> a
     androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator makeOpenCloseAnimation(android.content.Context,float,float,float,float) -> a
     boolean modifiesAlpha(android.animation.Animator) -> a
-    67:67:void androidx.fragment.app.FragmentActivity$HostCallbacks.onSupportInvalidateOptionsMenu():0:0 -> a
-    67:67:void moveToState(int,boolean):0 -> a
-    68:68:void moveToState(int,boolean):0:0 -> a
+    53:53:void androidx.fragment.app.FragmentActivity$HostCallbacks.onSupportInvalidateOptionsMenu():0:0 -> a
+    53:53:void moveToState(int,boolean):0 -> a
+    54:54:void moveToState(int,boolean):0:0 -> a
+    55:55:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
+    55:55:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
+    56:56:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
+    57:57:androidx.fragment.app.Fragment getFragment(android.os.Bundle,java.lang.String):0:0 -> a
+    57:57:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
+    58:58:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
+    59:59:androidx.fragment.app.Fragment getFragment(android.os.Bundle,java.lang.String):0:0 -> a
+    59:59:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
+    60:60:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
+    61:61:androidx.fragment.app.FragmentManagerImpl androidx.fragment.app.FragmentHostCallback.getFragmentManagerImpl():0:0 -> a
+    61:61:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
+    62:62:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
+    63:63:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
+    63:63:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
+    64:64:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
+    65:65:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
+    65:65:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
+    66:66:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
+    67:67:void androidx.fragment.app.FragmentActivity$HostCallbacks.onAttachFragment(androidx.fragment.app.Fragment):0:0 -> a
+    67:67:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
+    68:68:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
     69:69:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
     69:69:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
     70:70:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    71:71:androidx.fragment.app.Fragment getFragment(android.os.Bundle,java.lang.String):0:0 -> a
+    71:71:void ensureInflatedFragmentView(androidx.fragment.app.Fragment):0:0 -> a
     71:71:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
     72:72:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    73:73:androidx.fragment.app.Fragment getFragment(android.os.Bundle,java.lang.String):0:0 -> a
+    73:73:boolean androidx.fragment.app.FragmentActivity$HostCallbacks.onShouldSaveFragmentState(androidx.fragment.app.Fragment):0:0 -> a
     73:73:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
     74:74:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    75:75:androidx.fragment.app.FragmentManagerImpl androidx.fragment.app.FragmentHostCallback.getFragmentManagerImpl():0:0 -> a
+    75:75:void animateRemoveFragment(androidx.fragment.app.Fragment,androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator,int):0:0 -> a
     75:75:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
     76:76:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    77:77:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
+    77:77:void makeInactive(androidx.fragment.app.Fragment):0:0 -> a
     77:77:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
     78:78:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    79:79:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
-    79:79:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    80:80:void androidx.fragment.app.Fragment.onAttach(android.content.Context):0:0 -> a
-    80:80:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    81:81:android.app.Activity androidx.fragment.app.FragmentHostCallback.getActivity():0:0 -> a
-    81:81:void androidx.fragment.app.Fragment.onAttach(android.content.Context):0 -> a
-    81:81:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    82:82:void androidx.fragment.app.Fragment.onAttach(android.content.Context):0:0 -> a
-    82:82:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    83:83:void androidx.fragment.app.Fragment.onAttach(android.app.Activity):0:0 -> a
-    83:83:void androidx.fragment.app.Fragment.onAttach(android.content.Context):0 -> a
-    83:83:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    84:84:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    85:85:void androidx.fragment.app.FragmentActivity$HostCallbacks.onAttachFragment(androidx.fragment.app.Fragment):0:0 -> a
-    85:85:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    86:86:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    87:87:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
-    87:87:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    88:88:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    89:89:void androidx.fragment.app.Fragment.performCreate(android.os.Bundle):0:0 -> a
-    89:89:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    90:90:void androidx.fragment.app.Fragment.onCreate(android.os.Bundle):0:0 -> a
-    90:90:void androidx.fragment.app.Fragment.performCreate(android.os.Bundle):0 -> a
-    90:90:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    91:91:boolean isStateAtLeast(int):0:0 -> a
-    91:91:void androidx.fragment.app.Fragment.onCreate(android.os.Bundle):0 -> a
-    91:91:void androidx.fragment.app.Fragment.performCreate(android.os.Bundle):0 -> a
-    91:91:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    92:92:void androidx.fragment.app.Fragment.onCreate(android.os.Bundle):0:0 -> a
-    92:92:void androidx.fragment.app.Fragment.performCreate(android.os.Bundle):0 -> a
-    92:92:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    93:93:void androidx.fragment.app.Fragment.performCreate(android.os.Bundle):0:0 -> a
-    93:93:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    94:94:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    95:95:void androidx.fragment.app.Fragment.performCreate(android.os.Bundle):0:0 -> a
-    95:95:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    96:96:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    97:97:void ensureInflatedFragmentView(androidx.fragment.app.Fragment):0:0 -> a
-    97:97:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    98:98:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    99:99:android.content.Context androidx.fragment.app.Fragment.requireContext():0:0 -> a
-    99:99:android.content.res.Resources androidx.fragment.app.Fragment.getResources():0 -> a
-    99:99:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    100:100:android.content.res.Resources androidx.fragment.app.Fragment.getResources():0:0 -> a
-    100:100:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    101:101:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    102:102:android.content.Context androidx.fragment.app.Fragment.requireContext():0:0 -> a
-    102:102:android.content.res.Resources androidx.fragment.app.Fragment.getResources():0 -> a
-    102:102:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    103:103:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    104:104:void androidx.fragment.app.Fragment.performActivityCreated(android.os.Bundle):0:0 -> a
-    104:104:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    105:105:void androidx.fragment.app.Fragment.onActivityCreated(android.os.Bundle):0:0 -> a
-    105:105:void androidx.fragment.app.Fragment.performActivityCreated(android.os.Bundle):0 -> a
-    105:105:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    106:106:void androidx.fragment.app.Fragment.performActivityCreated(android.os.Bundle):0:0 -> a
-    106:106:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    107:107:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    108:108:void androidx.fragment.app.Fragment.restoreViewState(android.os.Bundle):0:0 -> a
-    108:108:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    109:109:void androidx.fragment.app.Fragment.onViewStateRestored(android.os.Bundle):0:0 -> a
-    109:109:void androidx.fragment.app.Fragment.restoreViewState(android.os.Bundle):0 -> a
-    109:109:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    110:110:void androidx.fragment.app.Fragment.restoreViewState(android.os.Bundle):0:0 -> a
-    110:110:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    111:111:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    112:112:void androidx.fragment.app.Fragment.performActivityCreated(android.os.Bundle):0:0 -> a
-    112:112:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    113:113:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    114:114:void androidx.fragment.app.Fragment.performStart():0:0 -> a
-    114:114:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    115:115:void androidx.fragment.app.Fragment.onStart():0:0 -> a
-    115:115:void androidx.fragment.app.Fragment.performStart():0 -> a
-    115:115:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    116:116:void androidx.fragment.app.Fragment.performStart():0:0 -> a
-    116:116:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    117:117:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    118:118:void androidx.fragment.app.Fragment.performStart():0:0 -> a
-    118:118:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    119:119:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    120:120:void androidx.fragment.app.Fragment.performResume():0:0 -> a
-    120:120:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    121:121:void androidx.fragment.app.Fragment.onResume():0:0 -> a
-    121:121:void androidx.fragment.app.Fragment.performResume():0 -> a
-    121:121:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    122:122:void androidx.fragment.app.Fragment.performResume():0:0 -> a
-    122:122:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    123:123:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    124:124:void androidx.fragment.app.Fragment.performResume():0:0 -> a
-    124:124:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    125:125:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    126:126:void androidx.fragment.app.Fragment.performPause():0:0 -> a
-    126:126:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    127:127:void dispatchPause():0:0 -> a
-    127:127:void androidx.fragment.app.Fragment.performPause():0 -> a
-    127:127:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    128:128:void androidx.fragment.app.Fragment.performPause():0:0 -> a
-    128:128:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    129:129:void androidx.fragment.app.Fragment.onPause():0:0 -> a
-    129:129:void androidx.fragment.app.Fragment.performPause():0 -> a
-    129:129:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    130:130:void androidx.fragment.app.Fragment.performPause():0:0 -> a
-    130:130:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    131:131:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    132:132:void androidx.fragment.app.Fragment.performPause():0:0 -> a
-    132:132:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    133:133:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    134:134:void androidx.fragment.app.Fragment.performStop():0:0 -> a
-    134:134:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    135:135:void dispatchStop():0:0 -> a
-    135:135:void androidx.fragment.app.Fragment.performStop():0 -> a
-    135:135:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    136:136:void androidx.fragment.app.Fragment.performStop():0:0 -> a
-    136:136:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    137:137:void androidx.fragment.app.Fragment.onStop():0:0 -> a
-    137:137:void androidx.fragment.app.Fragment.performStop():0 -> a
-    137:137:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    138:138:void androidx.fragment.app.Fragment.performStop():0:0 -> a
-    138:138:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    139:139:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    140:140:void androidx.fragment.app.Fragment.performStop():0:0 -> a
-    140:140:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    141:141:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    142:142:boolean androidx.fragment.app.FragmentActivity$HostCallbacks.onShouldSaveFragmentState(androidx.fragment.app.Fragment):0:0 -> a
-    142:142:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    143:143:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    144:144:void androidx.fragment.app.Fragment.performDestroyView():0:0 -> a
-    144:144:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    145:145:void dispatchDestroyView():0:0 -> a
-    145:145:void androidx.fragment.app.Fragment.performDestroyView():0 -> a
-    145:145:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    146:146:void androidx.fragment.app.Fragment.performDestroyView():0:0 -> a
-    146:146:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    147:147:void androidx.fragment.app.Fragment.onDestroyView():0:0 -> a
-    147:147:void androidx.fragment.app.Fragment.performDestroyView():0 -> a
-    147:147:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    148:148:void androidx.fragment.app.Fragment.performDestroyView():0:0 -> a
-    148:148:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    149:149:void androidx.loader.app.LoaderManagerImpl.markForRedelivery():0:0 -> a
-    149:149:void androidx.fragment.app.Fragment.performDestroyView():0 -> a
-    149:149:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    150:150:void androidx.fragment.app.Fragment.performDestroyView():0:0 -> a
-    150:150:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    151:151:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    152:152:void animateRemoveFragment(androidx.fragment.app.Fragment,androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator,int):0:0 -> a
-    152:152:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    153:153:void androidx.fragment.app.Fragment.setStateAfterAnimating(int):0:0 -> a
-    153:153:void animateRemoveFragment(androidx.fragment.app.Fragment,androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator,int):0 -> a
-    153:153:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    154:154:void animateRemoveFragment(androidx.fragment.app.Fragment,androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator,int):0:0 -> a
-    154:154:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    155:155:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    156:156:void androidx.fragment.app.Fragment.performDestroyView():0:0 -> a
-    156:156:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    157:157:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    158:158:void androidx.fragment.app.Fragment.performDestroy():0:0 -> a
-    158:158:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    159:159:void androidx.fragment.app.Fragment.onDestroy():0:0 -> a
-    159:159:void androidx.fragment.app.Fragment.performDestroy():0 -> a
-    159:159:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    160:160:androidx.fragment.app.FragmentActivity androidx.fragment.app.Fragment.getActivity():0:0 -> a
-    160:160:void androidx.fragment.app.Fragment.onDestroy():0 -> a
-    160:160:void androidx.fragment.app.Fragment.performDestroy():0 -> a
-    160:160:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    161:161:android.app.Activity androidx.fragment.app.FragmentHostCallback.getActivity():0:0 -> a
-    161:161:androidx.fragment.app.FragmentActivity androidx.fragment.app.Fragment.getActivity():0 -> a
-    161:161:void androidx.fragment.app.Fragment.onDestroy():0 -> a
-    161:161:void androidx.fragment.app.Fragment.performDestroy():0 -> a
-    161:161:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    162:162:androidx.fragment.app.FragmentActivity androidx.fragment.app.Fragment.getActivity():0:0 -> a
-    162:162:void androidx.fragment.app.Fragment.onDestroy():0 -> a
-    162:162:void androidx.fragment.app.Fragment.performDestroy():0 -> a
-    162:162:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    163:163:void androidx.fragment.app.Fragment.onDestroy():0:0 -> a
-    163:163:void androidx.fragment.app.Fragment.performDestroy():0 -> a
-    163:163:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    164:164:void androidx.fragment.app.Fragment.performDestroy():0:0 -> a
-    164:164:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    165:165:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    166:166:void androidx.fragment.app.Fragment.performDestroy():0:0 -> a
-    166:166:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    167:167:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    168:168:void androidx.fragment.app.Fragment.performDetach():0:0 -> a
-    168:168:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    169:169:void androidx.fragment.app.Fragment.onDetach():0:0 -> a
-    169:169:void androidx.fragment.app.Fragment.performDetach():0 -> a
-    169:169:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    170:170:void androidx.fragment.app.Fragment.performDetach():0:0 -> a
-    170:170:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    171:171:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    172:172:void makeInactive(androidx.fragment.app.Fragment):0:0 -> a
-    172:172:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    173:173:void androidx.fragment.app.Fragment.initState():0:0 -> a
-    173:173:void makeInactive(androidx.fragment.app.Fragment):0 -> a
-    173:173:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    174:174:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    175:175:void androidx.fragment.app.Fragment.performDetach():0:0 -> a
-    175:175:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    176:176:void androidx.fragment.app.Fragment.setStateAfterAnimating(int):0:0 -> a
-    176:176:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0 -> a
-    177:177:void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean):0:0 -> a
-    178:178:java.util.List androidx.fragment.app.FragmentManagerNonConfig.getFragments():0:0 -> a
-    178:178:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0 -> a
-    179:179:java.util.List androidx.fragment.app.FragmentManagerNonConfig.getChildNonConfigs():0:0 -> a
-    179:179:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0 -> a
-    180:180:java.util.List androidx.fragment.app.FragmentManagerNonConfig.getViewModelStores():0:0 -> a
-    180:180:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0 -> a
-    181:181:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0:0 -> a
-    182:182:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
-    182:182:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0 -> a
-    183:183:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0:0 -> a
-    184:184:androidx.fragment.app.Fragment androidx.fragment.app.FragmentState.instantiate(androidx.fragment.app.FragmentHostCallback,androidx.fragment.app.FragmentContainer,androidx.fragment.app.Fragment,androidx.fragment.app.FragmentManagerNonConfig,androidx.lifecycle.ViewModelStore):0:0 -> a
-    184:184:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0 -> a
-    185:185:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
-    185:185:androidx.fragment.app.Fragment androidx.fragment.app.FragmentState.instantiate(androidx.fragment.app.FragmentHostCallback,androidx.fragment.app.FragmentContainer,androidx.fragment.app.Fragment,androidx.fragment.app.FragmentManagerNonConfig,androidx.lifecycle.ViewModelStore):0 -> a
-    185:185:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0 -> a
-    186:186:androidx.fragment.app.Fragment androidx.fragment.app.FragmentState.instantiate(androidx.fragment.app.FragmentHostCallback,androidx.fragment.app.FragmentContainer,androidx.fragment.app.Fragment,androidx.fragment.app.FragmentManagerNonConfig,androidx.lifecycle.ViewModelStore):0:0 -> a
-    186:186:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0 -> a
-    187:187:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0:0 -> a
-    188:188:java.util.List androidx.fragment.app.FragmentManagerNonConfig.getFragments():0:0 -> a
-    188:188:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0 -> a
-    189:189:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0:0 -> a
+    79:79:java.util.List androidx.fragment.app.FragmentManagerNonConfig.getFragments():0:0 -> a
+    79:79:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0 -> a
+    80:80:java.util.List androidx.fragment.app.FragmentManagerNonConfig.getChildNonConfigs():0:0 -> a
+    80:80:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0 -> a
+    81:81:java.util.List androidx.fragment.app.FragmentManagerNonConfig.getViewModelStores():0:0 -> a
+    81:81:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0 -> a
+    82:82:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0:0 -> a
+    83:83:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
+    83:83:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0 -> a
+    84:84:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0:0 -> a
+    85:85:androidx.fragment.app.Fragment androidx.fragment.app.FragmentState.instantiate(androidx.fragment.app.FragmentHostCallback,androidx.fragment.app.FragmentContainer,androidx.fragment.app.Fragment,androidx.fragment.app.FragmentManagerNonConfig,androidx.lifecycle.ViewModelStore):0:0 -> a
+    85:85:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0 -> a
+    86:86:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
+    86:86:androidx.fragment.app.Fragment androidx.fragment.app.FragmentState.instantiate(androidx.fragment.app.FragmentHostCallback,androidx.fragment.app.FragmentContainer,androidx.fragment.app.Fragment,androidx.fragment.app.FragmentManagerNonConfig,androidx.lifecycle.ViewModelStore):0 -> a
+    86:86:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0 -> a
+    87:87:androidx.fragment.app.Fragment androidx.fragment.app.FragmentState.instantiate(androidx.fragment.app.FragmentHostCallback,androidx.fragment.app.FragmentContainer,androidx.fragment.app.Fragment,androidx.fragment.app.FragmentManagerNonConfig,androidx.lifecycle.ViewModelStore):0:0 -> a
+    87:87:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0 -> a
+    88:88:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0:0 -> a
+    89:89:java.util.List androidx.fragment.app.FragmentManagerNonConfig.getFragments():0:0 -> a
+    89:89:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0 -> a
+    90:90:void restoreAllState(android.os.Parcelable,androidx.fragment.app.FragmentManagerNonConfig):0:0 -> a
     void setBackStackIndex(int,androidx.fragment.app.BackStackRecord) -> a
-    190:190:boolean shouldRunOnHWLayer(android.view.View,androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator):0:0 -> a
-    190:190:void setHWLayerAnimListenerIfAlpha(android.view.View,androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator):0 -> a
-    191:191:boolean modifiesAlpha(androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator):0:0 -> a
-    191:191:boolean shouldRunOnHWLayer(android.view.View,androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator):0 -> a
-    191:191:void setHWLayerAnimListenerIfAlpha(android.view.View,androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator):0 -> a
-    192:192:void setHWLayerAnimListenerIfAlpha(android.view.View,androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator):0:0 -> a
-    193:193:java.util.List androidx.fragment.app.FragmentManagerNonConfig.getFragments():0:0 -> a
-    193:193:void setRetaining(androidx.fragment.app.FragmentManagerNonConfig):0 -> a
-    194:194:void setRetaining(androidx.fragment.app.FragmentManagerNonConfig):0:0 -> a
-    195:195:java.util.List androidx.fragment.app.FragmentManagerNonConfig.getChildNonConfigs():0:0 -> a
-    195:195:void setRetaining(androidx.fragment.app.FragmentManagerNonConfig):0 -> a
-    196:196:void setRetaining(androidx.fragment.app.FragmentManagerNonConfig):0:0 -> a
-    197:197:void androidx.fragment.app.FragmentActivity$HostCallbacks.onDump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]):0:0 -> a
-    197:197:void throwException(java.lang.RuntimeException):0 -> a
-    198:198:void throwException(java.lang.RuntimeException):0:0 -> a
+    91:91:boolean shouldRunOnHWLayer(android.view.View,androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator):0:0 -> a
+    91:91:void setHWLayerAnimListenerIfAlpha(android.view.View,androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator):0 -> a
+    92:92:boolean modifiesAlpha(androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator):0:0 -> a
+    92:92:boolean shouldRunOnHWLayer(android.view.View,androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator):0 -> a
+    92:92:void setHWLayerAnimListenerIfAlpha(android.view.View,androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator):0 -> a
+    93:93:void setHWLayerAnimListenerIfAlpha(android.view.View,androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator):0:0 -> a
+    94:94:java.util.List androidx.fragment.app.FragmentManagerNonConfig.getFragments():0:0 -> a
+    94:94:void setRetaining(androidx.fragment.app.FragmentManagerNonConfig):0 -> a
+    95:95:void setRetaining(androidx.fragment.app.FragmentManagerNonConfig):0:0 -> a
+    96:96:java.util.List androidx.fragment.app.FragmentManagerNonConfig.getChildNonConfigs():0:0 -> a
+    96:96:void setRetaining(androidx.fragment.app.FragmentManagerNonConfig):0 -> a
+    97:97:void setRetaining(androidx.fragment.app.FragmentManagerNonConfig):0:0 -> a
+    98:98:void androidx.fragment.app.FragmentActivity$HostCallbacks.onDump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]):0:0 -> a
+    98:98:void throwException(java.lang.RuntimeException):0 -> a
+    99:99:void throwException(java.lang.RuntimeException):0:0 -> a
     void detachFragment(androidx.fragment.app.Fragment) -> b
-    1:1:androidx.fragment.app.FragmentManager androidx.fragment.app.Fragment.getFragmentManager():0:0 -> b
-    1:1:void dispatchOnFragmentCreated(androidx.fragment.app.Fragment,android.os.Bundle,boolean):0 -> b
-    2:2:void dispatchOnFragmentCreated(androidx.fragment.app.Fragment,android.os.Bundle,boolean):0:0 -> b
-    3:3:androidx.fragment.app.FragmentManager androidx.fragment.app.Fragment.getFragmentManager():0:0 -> b
-    3:3:void dispatchOnFragmentDestroyed(androidx.fragment.app.Fragment,boolean):0 -> b
-    4:4:void dispatchOnFragmentDestroyed(androidx.fragment.app.Fragment,boolean):0:0 -> b
-    5:5:androidx.fragment.app.FragmentManager androidx.fragment.app.Fragment.getFragmentManager():0:0 -> b
-    5:5:void dispatchOnFragmentPreAttached(androidx.fragment.app.Fragment,android.content.Context,boolean):0 -> b
-    6:6:void dispatchOnFragmentPreAttached(androidx.fragment.app.Fragment,android.content.Context,boolean):0:0 -> b
-    7:7:boolean androidx.fragment.app.Fragment.performOptionsItemSelected(android.view.MenuItem):0:0 -> b
-    7:7:boolean dispatchOptionsItemSelected(android.view.MenuItem):0 -> b
+    void dispatchOnFragmentCreated(androidx.fragment.app.Fragment,android.os.Bundle,boolean) -> b
+    void dispatchOnFragmentDestroyed(androidx.fragment.app.Fragment,boolean) -> b
+    void dispatchOnFragmentPreAttached(androidx.fragment.app.Fragment,android.content.Context,boolean) -> b
+    boolean dispatchOptionsItemSelected(android.view.MenuItem) -> b
     void dispatchPictureInPictureModeChanged(boolean) -> b
     boolean dispatchPrepareOptionsMenu(android.view.Menu) -> b
     androidx.fragment.app.Fragment findFragmentById(int) -> b
-    8:8:android.os.Handler androidx.fragment.app.FragmentHostCallback.getHandler():0:0 -> b
-    8:8:boolean generateOpsForPendingActions(java.util.ArrayList,java.util.ArrayList):0 -> b
-    9:9:boolean generateOpsForPendingActions(java.util.ArrayList,java.util.ArrayList):0:0 -> b
-    boolean isStateSaved() -> b
-    1:1:androidx.fragment.app.FragmentManager androidx.fragment.app.Fragment.getFragmentManager():0:0 -> c
-    1:1:void dispatchOnFragmentDetached(androidx.fragment.app.Fragment,boolean):0 -> c
-    2:2:void dispatchOnFragmentDetached(androidx.fragment.app.Fragment,boolean):0:0 -> c
-    3:3:androidx.fragment.app.FragmentManager androidx.fragment.app.Fragment.getFragmentManager():0:0 -> c
-    3:3:void dispatchOnFragmentPreCreated(androidx.fragment.app.Fragment,android.os.Bundle,boolean):0 -> c
-    4:4:void dispatchOnFragmentPreCreated(androidx.fragment.app.Fragment,android.os.Bundle,boolean):0:0 -> c
-    5:5:android.os.Handler androidx.fragment.app.FragmentHostCallback.getHandler():0:0 -> c
-    5:5:void ensureExecReady(boolean):0 -> c
-    6:6:void ensureExecReady(boolean):0:0 -> c
+    1:1:android.os.Handler androidx.fragment.app.FragmentHostCallback.getHandler():0:0 -> b
+    1:1:boolean generateOpsForPendingActions(java.util.ArrayList,java.util.ArrayList):0 -> b
+    2:2:boolean generateOpsForPendingActions(java.util.ArrayList,java.util.ArrayList):0:0 -> b
+    java.util.List getFragments() -> b
+    void dispatchOnFragmentDetached(androidx.fragment.app.Fragment,boolean) -> c
+    void dispatchOnFragmentPreCreated(androidx.fragment.app.Fragment,android.os.Bundle,boolean) -> c
+    1:1:android.os.Handler androidx.fragment.app.FragmentHostCallback.getHandler():0:0 -> c
+    1:1:void ensureExecReady(boolean):0 -> c
+    2:2:void ensureExecReady(boolean):0:0 -> c
     void freeBackStackIndex(int) -> c
     void hideFragment(androidx.fragment.app.Fragment) -> c
-    7:7:boolean popBackStackImmediate(java.lang.String,int,int):0:0 -> c
-    7:7:boolean popBackStackImmediate():0 -> c
-    8:8:boolean popBackStackState(java.util.ArrayList,java.util.ArrayList,java.lang.String,int,int):0:0 -> c
-    8:8:boolean popBackStackImmediate(java.lang.String,int,int):0 -> c
-    8:8:boolean popBackStackImmediate():0 -> c
-    9:9:boolean popBackStackImmediate(java.lang.String,int,int):0:0 -> c
-    9:9:boolean popBackStackImmediate():0 -> c
+    boolean isStateSaved() -> c
     void removeRedundantOperationsAndExecute(java.util.ArrayList,java.util.ArrayList) -> c
-    void burpActive() -> d
-    1:1:androidx.fragment.app.FragmentManager androidx.fragment.app.Fragment.getFragmentManager():0:0 -> d
-    1:1:void dispatchOnFragmentPaused(androidx.fragment.app.Fragment,boolean):0 -> d
-    2:2:void dispatchOnFragmentPaused(androidx.fragment.app.Fragment,boolean):0:0 -> d
-    3:3:androidx.fragment.app.FragmentManager androidx.fragment.app.Fragment.getFragmentManager():0:0 -> d
-    3:3:void dispatchOnFragmentSaveInstanceState(androidx.fragment.app.Fragment,android.os.Bundle,boolean):0 -> d
-    4:4:void dispatchOnFragmentSaveInstanceState(androidx.fragment.app.Fragment,android.os.Bundle,boolean):0:0 -> d
+    void dispatchOnFragmentPaused(androidx.fragment.app.Fragment,boolean) -> d
+    void dispatchOnFragmentSaveInstanceState(androidx.fragment.app.Fragment,android.os.Bundle,boolean) -> d
     void makeActive(androidx.fragment.app.Fragment) -> d
+    1:1:boolean popBackStackImmediate(java.lang.String,int,int):0:0 -> d
+    1:1:boolean popBackStackImmediate():0 -> d
+    2:2:boolean popBackStackState(java.util.ArrayList,java.util.ArrayList,java.lang.String,int,int):0:0 -> d
+    2:2:boolean popBackStackImmediate(java.lang.String,int,int):0 -> d
+    2:2:boolean popBackStackImmediate():0 -> d
+    3:3:boolean popBackStackImmediate(java.lang.String,int,int):0:0 -> d
+    3:3:boolean popBackStackImmediate():0 -> d
     int reverseTransit(int) -> d
-    void checkStateLoss() -> e
-    1:1:androidx.fragment.app.FragmentManager androidx.fragment.app.Fragment.getFragmentManager():0:0 -> e
-    1:1:void dispatchOnFragmentResumed(androidx.fragment.app.Fragment,boolean):0 -> e
-    2:2:void dispatchOnFragmentResumed(androidx.fragment.app.Fragment,boolean):0:0 -> e
-    3:3:androidx.fragment.app.Fragment findFragmentUnder(androidx.fragment.app.Fragment):0:0 -> e
+    void burpActive() -> e
+    void dispatchOnFragmentResumed(androidx.fragment.app.Fragment,boolean) -> e
+    1:1:androidx.fragment.app.Fragment findFragmentUnder(androidx.fragment.app.Fragment):0:0 -> e
+    1:1:void moveFragmentToExpectedState(androidx.fragment.app.Fragment):0 -> e
+    2:2:void moveFragmentToExpectedState(androidx.fragment.app.Fragment):0:0 -> e
+    3:3:void completeShowHideFragment(androidx.fragment.app.Fragment):0:0 -> e
     3:3:void moveFragmentToExpectedState(androidx.fragment.app.Fragment):0 -> e
-    4:4:void moveFragmentToExpectedState(androidx.fragment.app.Fragment):0:0 -> e
-    5:5:void completeShowHideFragment(androidx.fragment.app.Fragment):0:0 -> e
-    5:5:void moveFragmentToExpectedState(androidx.fragment.app.Fragment):0 -> e
-    void cleanupExec() -> f
-    1:1:androidx.fragment.app.FragmentManager androidx.fragment.app.Fragment.getFragmentManager():0:0 -> f
-    1:1:void dispatchOnFragmentStarted(androidx.fragment.app.Fragment,boolean):0 -> f
-    2:2:void dispatchOnFragmentStarted(androidx.fragment.app.Fragment,boolean):0:0 -> f
+    void checkStateLoss() -> f
+    void dispatchOnFragmentStarted(androidx.fragment.app.Fragment,boolean) -> f
     void removeFragment(androidx.fragment.app.Fragment) -> f
-    void dispatchActivityCreated() -> g
-    1:1:androidx.fragment.app.FragmentManager androidx.fragment.app.Fragment.getFragmentManager():0:0 -> g
-    1:1:void dispatchOnFragmentStopped(androidx.fragment.app.Fragment,boolean):0 -> g
-    2:2:void dispatchOnFragmentStopped(androidx.fragment.app.Fragment,boolean):0:0 -> g
+    void cleanupExec() -> g
+    void dispatchOnFragmentStopped(androidx.fragment.app.Fragment,boolean) -> g
     void saveFragmentViewState(androidx.fragment.app.Fragment) -> g
-    void dispatchCreate() -> h
-    1:1:androidx.fragment.app.FragmentManager androidx.fragment.app.Fragment.getFragmentManager():0:0 -> h
-    1:1:void dispatchOnFragmentViewDestroyed(androidx.fragment.app.Fragment,boolean):0 -> h
-    2:2:void dispatchOnFragmentViewDestroyed(androidx.fragment.app.Fragment,boolean):0:0 -> h
-    3:3:androidx.fragment.app.FragmentManager androidx.fragment.app.Fragment.getFragmentManager():0:0 -> h
-    3:3:void setPrimaryNavigationFragment(androidx.fragment.app.Fragment):0 -> h
-    4:4:void setPrimaryNavigationFragment(androidx.fragment.app.Fragment):0:0 -> h
-    void dispatchDestroy() -> i
+    void dispatchActivityCreated() -> h
+    void dispatchOnFragmentViewDestroyed(androidx.fragment.app.Fragment,boolean) -> h
+    void setPrimaryNavigationFragment(androidx.fragment.app.Fragment) -> h
+    void dispatchCreate() -> i
     void showFragment(androidx.fragment.app.Fragment) -> i
-    void dispatchLowMemory() -> j
-    void dispatchPause() -> k
-    void dispatchResume() -> l
-    void dispatchStart() -> m
-    void doPendingDeferredStart() -> n
-    1:1:void doPendingDeferredStart():0:0 -> o
-    1:1:boolean execPendingActions():0 -> o
-    2:2:boolean execPendingActions():0:0 -> o
+    void dispatchDestroy() -> j
+    void dispatchLowMemory() -> k
+    void dispatchPause() -> l
+    void dispatchResume() -> m
+    void dispatchStart() -> n
+    void doPendingDeferredStart() -> o
     1:1:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> onCreateView
     1:1:android.view.View onCreateView(android.view.View,java.lang.String,android.content.Context,android.util.AttributeSet):0 -> onCreateView
     2:2:android.view.View onCreateView(android.view.View,java.lang.String,android.content.Context,android.util.AttributeSet):0:0 -> onCreateView
@@ -9963,37 +9708,34 @@ androidx.fragment.app.FragmentManagerImpl -> a.h.a.t:
     9:9:void moveToState(androidx.fragment.app.Fragment):0:0 -> onCreateView
     9:9:android.view.View onCreateView(android.view.View,java.lang.String,android.content.Context,android.util.AttributeSet):0 -> onCreateView
     10:10:android.view.View onCreateView(android.view.View,java.lang.String,android.content.Context,android.util.AttributeSet):0:0 -> onCreateView
-    android.view.LayoutInflater$Factory2 getLayoutInflaterFactory() -> p
-    1:1:void androidx.fragment.app.Fragment.noteStateNotSaved():0:0 -> q
-    1:1:void noteStateNotSaved():0 -> q
-    1:1:void forcePostponedTransactions():0:0 -> r
-    1:1:android.os.Parcelable saveAllState():0 -> r
-    2:2:void endAnimatingAwayFragments():0:0 -> r
-    2:2:android.os.Parcelable saveAllState():0 -> r
-    3:3:android.os.Parcelable saveAllState():0:0 -> r
-    4:4:android.os.Bundle saveFragmentBasicState(androidx.fragment.app.Fragment):0:0 -> r
-    4:4:android.os.Parcelable saveAllState():0 -> r
-    5:5:void androidx.fragment.app.Fragment.performSaveInstanceState(android.os.Bundle):0:0 -> r
-    5:5:android.os.Bundle saveFragmentBasicState(androidx.fragment.app.Fragment):0 -> r
-    5:5:android.os.Parcelable saveAllState():0 -> r
-    6:6:android.os.Bundle saveFragmentBasicState(androidx.fragment.app.Fragment):0:0 -> r
-    6:6:android.os.Parcelable saveAllState():0 -> r
-    7:7:android.os.Parcelable saveAllState():0:0 -> r
-    8:8:void putFragment(android.os.Bundle,java.lang.String,androidx.fragment.app.Fragment):0:0 -> r
-    8:8:android.os.Parcelable saveAllState():0 -> r
-    9:9:android.os.Parcelable saveAllState():0:0 -> r
-    10:10:void putFragment(android.os.Bundle,java.lang.String,androidx.fragment.app.Fragment):0:0 -> r
-    10:10:android.os.Parcelable saveAllState():0 -> r
-    11:11:android.os.Parcelable saveAllState():0:0 -> r
-    void saveNonConfig() -> s
-    1:1:android.os.Handler androidx.fragment.app.FragmentHostCallback.getHandler():0:0 -> t
-    1:1:void scheduleCommit():0 -> t
-    2:2:void scheduleCommit():0:0 -> t
-    3:3:android.os.Handler androidx.fragment.app.FragmentHostCallback.getHandler():0:0 -> t
-    3:3:void scheduleCommit():0 -> t
-    4:4:void scheduleCommit():0:0 -> t
-    1:1:void performPendingDeferredStart(androidx.fragment.app.Fragment):0:0 -> u
-    1:1:void startPendingDeferredFragments():0 -> u
+    1:1:void doPendingDeferredStart():0:0 -> p
+    1:1:boolean execPendingActions():0 -> p
+    2:2:boolean execPendingActions():0:0 -> p
+    android.view.LayoutInflater$Factory2 getLayoutInflaterFactory() -> q
+    void noteStateNotSaved() -> r
+    1:1:void forcePostponedTransactions():0:0 -> s
+    1:1:android.os.Parcelable saveAllState():0 -> s
+    2:2:void endAnimatingAwayFragments():0:0 -> s
+    2:2:android.os.Parcelable saveAllState():0 -> s
+    3:3:android.os.Parcelable saveAllState():0:0 -> s
+    4:4:android.os.Bundle saveFragmentBasicState(androidx.fragment.app.Fragment):0:0 -> s
+    4:4:android.os.Parcelable saveAllState():0 -> s
+    5:5:android.os.Parcelable saveAllState():0:0 -> s
+    6:6:void putFragment(android.os.Bundle,java.lang.String,androidx.fragment.app.Fragment):0:0 -> s
+    6:6:android.os.Parcelable saveAllState():0 -> s
+    7:7:android.os.Parcelable saveAllState():0:0 -> s
+    8:8:void putFragment(android.os.Bundle,java.lang.String,androidx.fragment.app.Fragment):0:0 -> s
+    8:8:android.os.Parcelable saveAllState():0 -> s
+    9:9:android.os.Parcelable saveAllState():0:0 -> s
+    void saveNonConfig() -> t
+    1:1:android.os.Handler androidx.fragment.app.FragmentHostCallback.getHandler():0:0 -> u
+    1:1:void scheduleCommit():0 -> u
+    2:2:void scheduleCommit():0:0 -> u
+    3:3:android.os.Handler androidx.fragment.app.FragmentHostCallback.getHandler():0:0 -> u
+    3:3:void scheduleCommit():0 -> u
+    4:4:void scheduleCommit():0:0 -> u
+    1:1:void performPendingDeferredStart(androidx.fragment.app.Fragment):0:0 -> v
+    1:1:void startPendingDeferredFragments():0 -> v
 androidx.fragment.app.FragmentManagerImpl$1 -> a.h.a.n:
     androidx.fragment.app.FragmentManagerImpl this$0 -> a
 androidx.fragment.app.FragmentManagerImpl$2 -> a.h.a.p:
@@ -10043,21 +9785,7 @@ androidx.fragment.app.FragmentManagerImpl$StartEnterTransitionListener -> a.h.a.
     boolean mIsBack -> a
     int mNumPostponed -> c
     androidx.fragment.app.BackStackRecord mRecord -> b
-    1:1:boolean androidx.fragment.app.Fragment.isPostponed():0:0 -> a
-    1:1:void completeTransaction():0 -> a
-    2:2:void androidx.fragment.app.Fragment.startPostponedEnterTransition():0:0 -> a
-    2:2:void completeTransaction():0 -> a
-    3:3:android.os.Handler androidx.fragment.app.FragmentHostCallback.getHandler():0:0 -> a
-    3:3:void androidx.fragment.app.Fragment.startPostponedEnterTransition():0 -> a
-    3:3:void completeTransaction():0 -> a
-    4:4:void androidx.fragment.app.Fragment.startPostponedEnterTransition():0:0 -> a
-    4:4:void completeTransaction():0 -> a
-    5:5:android.os.Handler androidx.fragment.app.FragmentHostCallback.getHandler():0:0 -> a
-    5:5:void androidx.fragment.app.Fragment.startPostponedEnterTransition():0 -> a
-    5:5:void completeTransaction():0 -> a
-    6:6:void androidx.fragment.app.Fragment.startPostponedEnterTransition():0:0 -> a
-    6:6:void completeTransaction():0 -> a
-    7:7:void completeTransaction():0:0 -> a
+    void completeTransaction() -> a
 androidx.fragment.app.FragmentManagerNonConfig -> a.h.a.u:
     java.util.List mChildNonConfigs -> b
     java.util.List mFragments -> a
@@ -10110,138 +9838,87 @@ androidx.fragment.app.FragmentTransition -> a.h.a.E:
     6:6:void addToFirstInLastOut(androidx.fragment.app.BackStackRecord,androidx.fragment.app.BackStackRecord$Op,android.util.SparseArray,boolean,boolean):0:0 -> a
     void callSharedElementStartEnd(androidx.fragment.app.Fragment,androidx.fragment.app.Fragment,boolean,androidx.collection.ArrayMap,boolean) -> a
     boolean canHandleAll(androidx.fragment.app.FragmentTransitionImpl,java.util.List) -> a
-    7:7:android.view.View androidx.fragment.app.Fragment.getView():0:0 -> a
+    7:7:boolean androidx.collection.ArrayMap.retainAll(java.util.Collection):0:0 -> a
     7:7:androidx.collection.ArrayMap captureInSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition):0 -> a
     8:8:androidx.collection.ArrayMap captureInSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition):0:0 -> a
-    9:9:androidx.core.app.SharedElementCallback androidx.fragment.app.Fragment.getExitTransitionCallback():0:0 -> a
+    9:9:boolean androidx.collection.ArrayMap.retainAll(java.util.Collection):0:0 -> a
     9:9:androidx.collection.ArrayMap captureInSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition):0 -> a
-    10:10:androidx.collection.ArrayMap captureInSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition):0:0 -> a
-    11:11:boolean androidx.collection.ArrayMap.retainAll(java.util.Collection):0:0 -> a
+    10:10:int androidx.collection.SimpleArrayMap.size():0:0 -> a
+    10:10:void retainValues(androidx.collection.ArrayMap,androidx.collection.ArrayMap):0 -> a
+    10:10:androidx.collection.ArrayMap captureInSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition):0 -> a
+    11:11:void retainValues(androidx.collection.ArrayMap,androidx.collection.ArrayMap):0:0 -> a
     11:11:androidx.collection.ArrayMap captureInSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition):0 -> a
     12:12:androidx.collection.ArrayMap captureInSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition):0:0 -> a
-    13:13:boolean androidx.collection.ArrayMap.retainAll(java.util.Collection):0:0 -> a
-    13:13:androidx.collection.ArrayMap captureInSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition):0 -> a
-    14:14:int androidx.collection.SimpleArrayMap.size():0:0 -> a
-    14:14:void retainValues(androidx.collection.ArrayMap,androidx.collection.ArrayMap):0 -> a
-    14:14:androidx.collection.ArrayMap captureInSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition):0 -> a
-    15:15:void retainValues(androidx.collection.ArrayMap,androidx.collection.ArrayMap):0:0 -> a
-    15:15:androidx.collection.ArrayMap captureInSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition):0 -> a
-    16:16:androidx.collection.ArrayMap captureInSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition):0:0 -> a
-    17:17:java.lang.Object androidx.fragment.app.Fragment.getReturnTransition():0:0 -> a
-    17:17:androidx.fragment.app.FragmentTransitionImpl chooseImpl(androidx.fragment.app.Fragment,androidx.fragment.app.Fragment):0 -> a
-    18:18:androidx.fragment.app.FragmentTransitionImpl chooseImpl(androidx.fragment.app.Fragment,androidx.fragment.app.Fragment):0:0 -> a
-    19:19:java.lang.Object androidx.fragment.app.Fragment.getSharedElementReturnTransition():0:0 -> a
-    19:19:androidx.fragment.app.FragmentTransitionImpl chooseImpl(androidx.fragment.app.Fragment,androidx.fragment.app.Fragment):0 -> a
-    20:20:androidx.fragment.app.FragmentTransitionImpl chooseImpl(androidx.fragment.app.Fragment,androidx.fragment.app.Fragment):0:0 -> a
-    21:21:java.lang.Object androidx.fragment.app.Fragment.getReenterTransition():0:0 -> a
-    21:21:androidx.fragment.app.FragmentTransitionImpl chooseImpl(androidx.fragment.app.Fragment,androidx.fragment.app.Fragment):0 -> a
-    22:22:androidx.fragment.app.FragmentTransitionImpl chooseImpl(androidx.fragment.app.Fragment,androidx.fragment.app.Fragment):0:0 -> a
-    23:23:android.view.View androidx.fragment.app.Fragment.getView():0:0 -> a
-    23:23:java.util.ArrayList configureEnteringExitingViews(androidx.fragment.app.FragmentTransitionImpl,java.lang.Object,androidx.fragment.app.Fragment,java.util.ArrayList,android.view.View):0 -> a
-    24:24:java.util.ArrayList configureEnteringExitingViews(androidx.fragment.app.FragmentTransitionImpl,java.lang.Object,androidx.fragment.app.Fragment,java.util.ArrayList,android.view.View):0:0 -> a
-    25:25:java.lang.Object androidx.fragment.app.Fragment.getReenterTransition():0:0 -> a
-    25:25:java.lang.Object getEnterTransition(androidx.fragment.app.FragmentTransitionImpl,androidx.fragment.app.Fragment,boolean):0 -> a
-    26:26:java.lang.Object getEnterTransition(androidx.fragment.app.FragmentTransitionImpl,androidx.fragment.app.Fragment,boolean):0:0 -> a
+    androidx.fragment.app.FragmentTransitionImpl chooseImpl(androidx.fragment.app.Fragment,androidx.fragment.app.Fragment) -> a
+    java.util.ArrayList configureEnteringExitingViews(androidx.fragment.app.FragmentTransitionImpl,java.lang.Object,androidx.fragment.app.Fragment,java.util.ArrayList,android.view.View) -> a
+    java.lang.Object getEnterTransition(androidx.fragment.app.FragmentTransitionImpl,androidx.fragment.app.Fragment,boolean) -> a
     android.view.View getInEpicenterView(androidx.collection.ArrayMap,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,java.lang.Object,boolean) -> a
-    27:27:java.lang.Object androidx.fragment.app.Fragment.getSharedElementReturnTransition():0:0 -> a
-    27:27:java.lang.Object getSharedElementTransition(androidx.fragment.app.FragmentTransitionImpl,androidx.fragment.app.Fragment,androidx.fragment.app.Fragment,boolean):0 -> a
-    28:28:java.lang.Object getSharedElementTransition(androidx.fragment.app.FragmentTransitionImpl,androidx.fragment.app.Fragment,androidx.fragment.app.Fragment,boolean):0:0 -> a
-    29:29:java.lang.Object androidx.fragment.app.FragmentTransitionCompat21.wrapTransitionInSet(java.lang.Object):0:0 -> a
-    29:29:java.lang.Object getSharedElementTransition(androidx.fragment.app.FragmentTransitionImpl,androidx.fragment.app.Fragment,androidx.fragment.app.Fragment,boolean):0 -> a
-    30:30:boolean androidx.fragment.app.Fragment.getAllowReturnTransitionOverlap():0:0 -> a
-    30:30:java.lang.Object mergeTransitions(androidx.fragment.app.FragmentTransitionImpl,java.lang.Object,java.lang.Object,java.lang.Object,androidx.fragment.app.Fragment,boolean):0 -> a
-    31:31:boolean androidx.fragment.app.Fragment.getAllowEnterTransitionOverlap():0:0 -> a
-    31:31:java.lang.Object mergeTransitions(androidx.fragment.app.FragmentTransitionImpl,java.lang.Object,java.lang.Object,java.lang.Object,androidx.fragment.app.Fragment,boolean):0 -> a
-    32:32:java.lang.Object mergeTransitions(androidx.fragment.app.FragmentTransitionImpl,java.lang.Object,java.lang.Object,java.lang.Object,androidx.fragment.app.Fragment,boolean):0:0 -> a
+    13:13:java.lang.Object androidx.fragment.app.FragmentTransitionCompat21.wrapTransitionInSet(java.lang.Object):0:0 -> a
+    13:13:java.lang.Object getSharedElementTransition(androidx.fragment.app.FragmentTransitionImpl,androidx.fragment.app.Fragment,androidx.fragment.app.Fragment,boolean):0 -> a
+    java.lang.Object mergeTransitions(androidx.fragment.app.FragmentTransitionImpl,java.lang.Object,java.lang.Object,java.lang.Object,androidx.fragment.app.Fragment,boolean) -> a
     void setOutEpicenter(androidx.fragment.app.FragmentTransitionImpl,java.lang.Object,java.lang.Object,androidx.collection.ArrayMap,boolean,androidx.fragment.app.BackStackRecord) -> a
     void setViewVisibility(java.util.ArrayList,int) -> a
-    33:33:void calculatePopFragments(androidx.fragment.app.BackStackRecord,android.util.SparseArray,boolean):0:0 -> a
+    14:14:void calculatePopFragments(androidx.fragment.app.BackStackRecord,android.util.SparseArray,boolean):0:0 -> a
+    14:14:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
+    15:15:void calculateFragments(androidx.fragment.app.BackStackRecord,android.util.SparseArray,boolean):0:0 -> a
+    15:15:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
+    16:16:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0:0 -> a
+    17:17:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
+    17:17:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
+    18:18:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0:0 -> a
+    19:19:androidx.collection.ArrayMap calculateNameOverrides(int,java.util.ArrayList,java.util.ArrayList,int,int):0:0 -> a
+    19:19:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
+    20:20:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0:0 -> a
+    21:21:void configureTransitionsReordered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0:0 -> a
+    21:21:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
+    22:22:java.lang.Object configureSharedElementsReordered(androidx.fragment.app.FragmentTransitionImpl,android.view.ViewGroup,android.view.View,androidx.collection.ArrayMap,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,java.util.ArrayList,java.util.ArrayList,java.lang.Object,java.lang.Object):0:0 -> a
+    22:22:void configureTransitionsReordered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
+    22:22:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
+    23:23:void configureTransitionsReordered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0:0 -> a
+    23:23:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
+    24:24:void replaceHide(androidx.fragment.app.FragmentTransitionImpl,java.lang.Object,androidx.fragment.app.Fragment,java.util.ArrayList):0:0 -> a
+    24:24:void configureTransitionsReordered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
+    24:24:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
+    25:25:java.util.ArrayList androidx.fragment.app.FragmentTransitionImpl.prepareSetNameOverridesReordered(java.util.ArrayList):0:0 -> a
+    25:25:void configureTransitionsReordered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
+    25:25:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
+    26:26:void configureTransitionsReordered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0:0 -> a
+    26:26:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
+    27:27:void androidx.fragment.app.FragmentTransitionImpl.setNameOverridesReordered(android.view.View,java.util.ArrayList,java.util.ArrayList,java.util.ArrayList,java.util.Map):0:0 -> a
+    27:27:void configureTransitionsReordered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
+    27:27:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
+    28:28:void configureTransitionsReordered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0:0 -> a
+    28:28:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
+    29:29:void configureTransitionsOrdered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0:0 -> a
+    29:29:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
+    30:30:java.lang.Object configureSharedElementsOrdered(androidx.fragment.app.FragmentTransitionImpl,android.view.ViewGroup,android.view.View,androidx.collection.ArrayMap,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,java.util.ArrayList,java.util.ArrayList,java.lang.Object,java.lang.Object):0:0 -> a
+    30:30:void configureTransitionsOrdered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
+    30:30:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
+    31:31:void configureTransitionsOrdered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0:0 -> a
+    31:31:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
+    32:32:void androidx.fragment.app.FragmentTransitionCompat21.addTarget(java.lang.Object,android.view.View):0:0 -> a
+    32:32:void configureTransitionsOrdered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
+    32:32:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
+    33:33:void configureTransitionsOrdered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0:0 -> a
     33:33:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    34:34:void calculateFragments(androidx.fragment.app.BackStackRecord,android.util.SparseArray,boolean):0:0 -> a
+    34:34:void scheduleTargetChange(androidx.fragment.app.FragmentTransitionImpl,android.view.ViewGroup,androidx.fragment.app.Fragment,android.view.View,java.util.ArrayList,java.lang.Object,java.util.ArrayList,java.lang.Object,java.util.ArrayList):0:0 -> a
+    34:34:void configureTransitionsOrdered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
     34:34:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    35:35:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0:0 -> a
-    36:36:android.content.Context androidx.fragment.app.FragmentHostCallback.getContext():0:0 -> a
+    35:35:void androidx.fragment.app.FragmentTransitionImpl.setNameOverridesOrdered(android.view.View,java.util.ArrayList,java.util.Map):0:0 -> a
+    35:35:void configureTransitionsOrdered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
+    35:35:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
+    36:36:void configureTransitionsOrdered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0:0 -> a
     36:36:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    37:37:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0:0 -> a
-    38:38:androidx.collection.ArrayMap calculateNameOverrides(int,java.util.ArrayList,java.util.ArrayList,int,int):0:0 -> a
-    38:38:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    39:39:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0:0 -> a
-    40:40:void configureTransitionsReordered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0:0 -> a
-    40:40:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    41:41:java.lang.Object configureSharedElementsReordered(androidx.fragment.app.FragmentTransitionImpl,android.view.ViewGroup,android.view.View,androidx.collection.ArrayMap,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,java.util.ArrayList,java.util.ArrayList,java.lang.Object,java.lang.Object):0:0 -> a
-    41:41:void configureTransitionsReordered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
-    41:41:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    42:42:android.view.View androidx.fragment.app.Fragment.getView():0:0 -> a
-    42:42:java.lang.Object configureSharedElementsReordered(androidx.fragment.app.FragmentTransitionImpl,android.view.ViewGroup,android.view.View,androidx.collection.ArrayMap,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,java.util.ArrayList,java.util.ArrayList,java.lang.Object,java.lang.Object):0 -> a
-    42:42:void configureTransitionsReordered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
-    42:42:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    43:43:java.lang.Object configureSharedElementsReordered(androidx.fragment.app.FragmentTransitionImpl,android.view.ViewGroup,android.view.View,androidx.collection.ArrayMap,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,java.util.ArrayList,java.util.ArrayList,java.lang.Object,java.lang.Object):0:0 -> a
-    43:43:void configureTransitionsReordered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
-    43:43:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    44:44:void configureTransitionsReordered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0:0 -> a
-    44:44:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    45:45:void replaceHide(androidx.fragment.app.FragmentTransitionImpl,java.lang.Object,androidx.fragment.app.Fragment,java.util.ArrayList):0:0 -> a
-    45:45:void configureTransitionsReordered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
-    45:45:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    46:46:android.view.View androidx.fragment.app.Fragment.getView():0:0 -> a
-    46:46:void replaceHide(androidx.fragment.app.FragmentTransitionImpl,java.lang.Object,androidx.fragment.app.Fragment,java.util.ArrayList):0 -> a
-    46:46:void configureTransitionsReordered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
-    46:46:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    47:47:void replaceHide(androidx.fragment.app.FragmentTransitionImpl,java.lang.Object,androidx.fragment.app.Fragment,java.util.ArrayList):0:0 -> a
-    47:47:void configureTransitionsReordered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
-    47:47:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    48:48:java.util.ArrayList androidx.fragment.app.FragmentTransitionImpl.prepareSetNameOverridesReordered(java.util.ArrayList):0:0 -> a
-    48:48:void configureTransitionsReordered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
-    48:48:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    49:49:void configureTransitionsReordered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0:0 -> a
-    49:49:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    50:50:void androidx.fragment.app.FragmentTransitionImpl.setNameOverridesReordered(android.view.View,java.util.ArrayList,java.util.ArrayList,java.util.ArrayList,java.util.Map):0:0 -> a
-    50:50:void configureTransitionsReordered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
-    50:50:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    51:51:void configureTransitionsReordered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0:0 -> a
-    51:51:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    52:52:void configureTransitionsOrdered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0:0 -> a
-    52:52:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    53:53:java.lang.Object configureSharedElementsOrdered(androidx.fragment.app.FragmentTransitionImpl,android.view.ViewGroup,android.view.View,androidx.collection.ArrayMap,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,java.util.ArrayList,java.util.ArrayList,java.lang.Object,java.lang.Object):0:0 -> a
-    53:53:void configureTransitionsOrdered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
-    53:53:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    54:54:void configureTransitionsOrdered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0:0 -> a
-    54:54:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    55:55:void androidx.fragment.app.FragmentTransitionCompat21.addTarget(java.lang.Object,android.view.View):0:0 -> a
-    55:55:void configureTransitionsOrdered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
-    55:55:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    56:56:void configureTransitionsOrdered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0:0 -> a
-    56:56:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    57:57:void scheduleTargetChange(androidx.fragment.app.FragmentTransitionImpl,android.view.ViewGroup,androidx.fragment.app.Fragment,android.view.View,java.util.ArrayList,java.lang.Object,java.util.ArrayList,java.lang.Object,java.util.ArrayList):0:0 -> a
-    57:57:void configureTransitionsOrdered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
-    57:57:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    58:58:void androidx.fragment.app.FragmentTransitionImpl.setNameOverridesOrdered(android.view.View,java.util.ArrayList,java.util.Map):0:0 -> a
-    58:58:void configureTransitionsOrdered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
-    58:58:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    59:59:void configureTransitionsOrdered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0:0 -> a
-    59:59:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    60:60:void androidx.fragment.app.FragmentTransitionImpl.scheduleNameReset(android.view.ViewGroup,java.util.ArrayList,java.util.Map):0:0 -> a
-    60:60:void configureTransitionsOrdered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
-    60:60:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
-    1:1:android.view.View androidx.fragment.app.Fragment.getView():0:0 -> b
+    37:37:void androidx.fragment.app.FragmentTransitionImpl.scheduleNameReset(android.view.ViewGroup,java.util.ArrayList,java.util.Map):0:0 -> a
+    37:37:void configureTransitionsOrdered(androidx.fragment.app.FragmentManagerImpl,int,androidx.fragment.app.FragmentTransition$FragmentContainerTransition,android.view.View,androidx.collection.ArrayMap):0 -> a
+    37:37:void startTransitions(androidx.fragment.app.FragmentManagerImpl,java.util.ArrayList,java.util.ArrayList,int,int,boolean):0 -> a
+    1:1:boolean androidx.collection.ArrayMap.retainAll(java.util.Collection):0:0 -> b
     1:1:androidx.collection.ArrayMap captureOutSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition):0 -> b
     2:2:androidx.collection.ArrayMap captureOutSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition):0:0 -> b
-    3:3:androidx.core.app.SharedElementCallback androidx.fragment.app.Fragment.getExitTransitionCallback():0:0 -> b
+    3:3:boolean androidx.collection.ArrayMap.retainAll(java.util.Collection):0:0 -> b
     3:3:androidx.collection.ArrayMap captureOutSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition):0 -> b
     4:4:androidx.collection.ArrayMap captureOutSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition):0:0 -> b
-    5:5:boolean androidx.collection.ArrayMap.retainAll(java.util.Collection):0:0 -> b
-    5:5:androidx.collection.ArrayMap captureOutSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition):0 -> b
-    6:6:java.util.Set androidx.collection.ArrayMap.keySet():0:0 -> b
-    6:6:androidx.collection.ArrayMap captureOutSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition):0 -> b
-    7:7:java.util.Set androidx.collection.MapCollections.getKeySet():0:0 -> b
-    7:7:java.util.Set androidx.collection.ArrayMap.keySet():0 -> b
-    7:7:androidx.collection.ArrayMap captureOutSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition):0 -> b
-    8:8:boolean androidx.collection.ArrayMap.retainAll(java.util.Collection):0:0 -> b
-    8:8:androidx.collection.ArrayMap captureOutSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition):0 -> b
-    9:9:androidx.collection.ArrayMap captureOutSharedElements(androidx.fragment.app.FragmentTransitionImpl,androidx.collection.ArrayMap,java.lang.Object,androidx.fragment.app.FragmentTransition$FragmentContainerTransition):0:0 -> b
-    10:10:java.lang.Object androidx.fragment.app.Fragment.getReturnTransition():0:0 -> b
-    10:10:java.lang.Object getExitTransition(androidx.fragment.app.FragmentTransitionImpl,androidx.fragment.app.Fragment,boolean):0 -> b
-    11:11:java.lang.Object getExitTransition(androidx.fragment.app.FragmentTransitionImpl,androidx.fragment.app.Fragment,boolean):0:0 -> b
+    java.lang.Object getExitTransition(androidx.fragment.app.FragmentTransitionImpl,androidx.fragment.app.Fragment,boolean) -> b
 androidx.fragment.app.FragmentTransition$1 -> a.h.a.A:
     java.util.ArrayList val$exitingViews -> a
 androidx.fragment.app.FragmentTransition$2 -> a.h.a.B:
@@ -10535,7 +10212,6 @@ androidx.lifecycle.ViewModelStore -> a.i.r:
 androidx.lifecycle.ViewModelStoreOwner -> a.i.s:
     androidx.lifecycle.ViewModelStore getViewModelStore() -> b
 androidx.loader.app.LoaderManager -> a.j.a.a:
-    void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]) -> a
     androidx.loader.app.LoaderManager getInstance(androidx.lifecycle.LifecycleOwner) -> a
 androidx.loader.app.LoaderManagerImpl -> a.j.a.b:
     androidx.lifecycle.LifecycleOwner mLifecycleOwner -> b
@@ -10566,7 +10242,6 @@ androidx.loader.app.LoaderManagerImpl -> a.j.a.b:
     8:8:androidx.lifecycle.ViewModel androidx.lifecycle.ViewModelProvider.get(java.lang.Class):0:0 -> <init>
     8:8:androidx.loader.app.LoaderManagerImpl$LoaderViewModel androidx.loader.app.LoaderManagerImpl$LoaderViewModel.getInstance(androidx.lifecycle.ViewModelStore):0 -> <init>
     8:8:void <init>(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.ViewModelStore):0 -> <init>
-    void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]) -> a
 androidx.loader.app.LoaderManagerImpl$LoaderInfo -> a.j.a.b$a:
     androidx.lifecycle.LifecycleOwner mLifecycleOwner -> l
     int mId -> j
@@ -11055,12 +10730,10 @@ androidx.versionedparcelable.VersionedParcelParcel -> a.l.c:
     java.lang.String readString() -> c
 androidx.versionedparcelable.VersionedParcelable -> a.l.d:
 com.android.tools.r8.GeneratedOutlineSupport -> b.a.a.a.a:
-    java.lang.String outline0(java.lang.String,java.lang.Object,java.lang.String) -> a
-    java.lang.String outline1(java.lang.String,java.lang.Object,java.lang.String,java.lang.String) -> a
-    java.lang.String outline2(java.lang.String,java.lang.String) -> a
-    java.lang.String outline3(org.xmlpull.v1.XmlPullParser,java.lang.StringBuilder,java.lang.String) -> a
-    java.lang.StringBuilder outline4(java.lang.String) -> a
-    void outline5(java.lang.String,java.lang.Object,java.lang.String) -> b
+    java.lang.String outline0(java.lang.String,java.lang.Object,java.lang.String,java.lang.String) -> a
+    java.lang.String outline1(org.xmlpull.v1.XmlPullParser,java.lang.StringBuilder,java.lang.String) -> a
+    java.lang.StringBuilder outline2(java.lang.String) -> a
+    void outline3(java.lang.String,java.lang.Object,java.lang.String) -> a
 com.zeus.proguard.ProguardActivity -> com.zeus.proguard.ProguardActivity:
     1:1:void com.zeus.proguard.Test.testPrivate():0:0 -> onCreate
     1:1:void com.zeus.proguard.Test.printPrivate():0 -> onCreate
@@ -11075,5 +10748,45 @@ com.zeus.proguard.ProguardActivity -> com.zeus.proguard.ProguardActivity:
     5:5:void onCreate(android.os.Bundle):0 -> onCreate
     6:6:void println():0:0 -> onCreate
     6:6:void onCreate(android.os.Bundle):0 -> onCreate
-com.zeus.proguard.parent.ParentTest -> b.b.a.a.a:
-com.zeus.proguard.parent.child.ChildTest -> b.b.a.a.a.a:
+com.zeus.proguard.fragmenterror.ErrorActivity -> com.zeus.proguard.fragmenterror.ErrorActivity:
+    1:1:void androidx.fragment.app.BackStackRecord.doAddOp(int,androidx.fragment.app.Fragment,java.lang.String,int):0:0 -> onCreate
+    1:1:androidx.fragment.app.FragmentTransaction androidx.fragment.app.BackStackRecord.add(int,androidx.fragment.app.Fragment):0 -> onCreate
+    1:1:void onCreate(android.os.Bundle):0 -> onCreate
+    2:2:int androidx.fragment.app.BackStackRecord.commitInternal(boolean):0:0 -> onCreate
+    2:2:int androidx.fragment.app.BackStackRecord.commit():0 -> onCreate
+    2:2:void onCreate(android.os.Bundle):0 -> onCreate
+    3:3:void androidx.fragment.app.BackStackRecord.doAddOp(int,androidx.fragment.app.Fragment,java.lang.String,int):0:0 -> onCreate
+    3:3:androidx.fragment.app.FragmentTransaction androidx.fragment.app.BackStackRecord.add(int,androidx.fragment.app.Fragment):0 -> onCreate
+    3:3:void onCreate(android.os.Bundle):0 -> onCreate
+com.zeus.proguard.fragmenterror.ErrorFragment -> b.b.a.a.a:
+    java.lang.String name -> Y
+    1:1:void androidx.fragment.app.Fragment.onDestroy():0:0 -> H
+    1:1:void onDestroy():0 -> H
+    2:2:void onDestroy():0:0 -> H
+    1:1:void androidx.fragment.app.Fragment.onDestroyView():0:0 -> J
+    1:1:void onDestroyView():0 -> J
+    2:2:void onDestroyView():0:0 -> J
+    1:1:void androidx.fragment.app.Fragment.onDetach():0:0 -> K
+    1:1:void onDetach():0 -> K
+    2:2:void onDetach():0:0 -> K
+    1:1:void androidx.fragment.app.Fragment.onAttach(android.content.Context):0:0 -> a
+    1:1:void onAttach(android.content.Context):0 -> a
+    2:2:android.app.Activity androidx.fragment.app.FragmentHostCallback.getActivity():0:0 -> a
+    2:2:void androidx.fragment.app.Fragment.onAttach(android.content.Context):0 -> a
+    2:2:void onAttach(android.content.Context):0 -> a
+    3:3:void androidx.fragment.app.Fragment.onAttach(android.content.Context):0:0 -> a
+    3:3:void onAttach(android.content.Context):0 -> a
+    4:4:void onAttach(android.content.Context):0:0 -> a
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+    void onViewCreated(android.view.View,android.os.Bundle) -> a
+    1:1:void androidx.fragment.app.Fragment.onCreate(android.os.Bundle):0:0 -> c
+    1:1:void onCreate(android.os.Bundle):0 -> c
+    2:2:boolean androidx.fragment.app.FragmentManagerImpl.isStateAtLeast(int):0:0 -> c
+    2:2:void androidx.fragment.app.Fragment.onCreate(android.os.Bundle):0 -> c
+    2:2:void onCreate(android.os.Bundle):0 -> c
+    3:3:void androidx.fragment.app.Fragment.onCreate(android.os.Bundle):0:0 -> c
+    3:3:void onCreate(android.os.Bundle):0 -> c
+    4:4:void onCreate(android.os.Bundle):0:0 -> c
+com.zeus.proguard.parent.ParentTest -> b.b.a.b.b:
+com.zeus.proguard.parent.ParentTest1 -> b.b.a.b.a:
+com.zeus.proguard.parent.child.ChildTest -> b.b.a.b.a.a:

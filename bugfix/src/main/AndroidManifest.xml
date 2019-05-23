@@ -13,11 +13,11 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity android:name=".MainActivity">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".fullscreenorientation.FullscreenOpaqueOrientationBugActivity"
@@ -25,12 +25,19 @@
             android:screenOrientation="portrait"
             >
 
-            <intent-filter>
+           <!-- <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
+
+        <service android:name=".o.BackgroundService" >
+            <intent-filter>
+                <action android:name="com.zeus.o.bg.service"/>
+            </intent-filter>
+        </service>
+        <service android:name=".o.Background2Service" />
     </application>
 
 </manifest>

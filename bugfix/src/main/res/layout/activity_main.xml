@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,9 +7,13 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:id="@+id/o_backgroundservice"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:text="测试 Android 8.0 后background service的限制问题"
+        android:background="#123463"
       />
 
-</FrameLayout>
+</LinearLayout>

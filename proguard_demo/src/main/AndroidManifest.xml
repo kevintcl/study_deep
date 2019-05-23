@@ -13,6 +13,9 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".ProguardActivity">
+
+        </activity>
+        <activity android:name=".fragmenterror.ErrorActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
