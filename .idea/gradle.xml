@@ -3,11 +3,29 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <compositeConfiguration>
-          <compositeBuild compositeDefinitionSource="SCRIPT" />
-        </compositeConfiguration>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/PackerDexShellTools" />
+            <option value="$PROJECT_DIR$/annotation" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/aspectj_plugin" />
+            <option value="$PROJECT_DIR$/aspectj_test" />
+            <option value="$PROJECT_DIR$/binder_study" />
+            <option value="$PROJECT_DIR$/bugfix" />
+            <option value="$PROJECT_DIR$/hook_ams" />
+            <option value="$PROJECT_DIR$/lambda" />
+            <option value="$PROJECT_DIR$/my_recyclerview" />
+            <option value="$PROJECT_DIR$/packer_parse_apk" />
+            <option value="$PROJECT_DIR$/packer_source_apk" />
+            <option value="$PROJECT_DIR$/proguard_demo" />
+            <option value="$PROJECT_DIR$/rxjava" />
+            <option value="$PROJECT_DIR$/source_analysis" />
+            <option value="$PROJECT_DIR$/study_io" />
+          </set>
+        </option>
         <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>

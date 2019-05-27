@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
@@ -12,8 +13,14 @@
         android:layout_height="72dp"
         android:gravity="center"
         android:textColor="#fff"
-        android:text="测试 Android 8.0 后background service的限制问题"
+        android:text="选择"
         android:background="#123463"
-      />
+        tools:ignore="HardcodedText" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:background="#00ff00"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
 
+        />
 </LinearLayout>

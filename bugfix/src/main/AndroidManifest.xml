@@ -21,20 +21,22 @@
         </activity>
         <activity
             android:name=".fullscreenorientation.FullscreenOpaqueOrientationBugActivity"
-            android:theme="@style/fullscreen_opaque_orientation"
             android:screenOrientation="portrait"
-            >
+            android:theme="@style/fullscreen_opaque_orientation">
 
-           <!-- <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!-- <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>-->
         </activity>
+        <activity android:name=".compact.notification.ONotificationCompatTestActivity"
+            android:label="Notification Compact"
+            />
 
-        <service android:name=".o.BackgroundService" >
+        <service android:name=".o.BackgroundService">
             <intent-filter>
-                <action android:name="com.zeus.o.bg.service"/>
+                <action android:name="com.zeus.o.bg.service" />
             </intent-filter>
         </service>
         <service android:name=".o.Background2Service" />
