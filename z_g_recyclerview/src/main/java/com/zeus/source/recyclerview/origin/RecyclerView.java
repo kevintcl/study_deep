@@ -212,7 +212,7 @@ public class RecyclerView extends ViewGroup implements ScrollingView, NestedScro
 
     static final String TAG = "RecyclerView";
 
-    static final boolean DEBUG = false;
+    static final boolean DEBUG = true;
 
     static final boolean VERBOSE_TRACING = false;
 
@@ -681,12 +681,17 @@ public class RecyclerView extends ViewGroup implements ScrollingView, NestedScro
                 ViewConfigurationCompat.getScaledVerticalScrollFactor(vc, context);
         mMinFlingVelocity = vc.getScaledMinimumFlingVelocity();
         mMaxFlingVelocity = vc.getScaledMaximumFlingVelocity();
+
         setWillNotDraw(getOverScrollMode() == View.OVER_SCROLL_NEVER);
 
         mItemAnimator.setListener(mItemAnimatorListener);
+
         initAdapterManager();
+
         initChildrenHelper();
+
         initAutofill();
+
         // If not explicitly specified this view is important for accessibility.
         if (ViewCompat.getImportantForAccessibility(this)
                 == ViewCompat.IMPORTANT_FOR_ACCESSIBILITY_AUTO) {
@@ -704,12 +709,16 @@ public class RecyclerView extends ViewGroup implements ScrollingView, NestedScro
             int defStyleRes = 0;
             TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RecyclerView,
                     defStyle, defStyleRes);
+
             String layoutManagerName = a.getString(R.styleable.RecyclerView_layoutManager);
+
             int descendantFocusability = a.getInt(
                     R.styleable.RecyclerView_android_descendantFocusability, -1);
+
             if (descendantFocusability == -1) {
                 setDescendantFocusability(ViewGroup.FOCUS_AFTER_DESCENDANTS);
             }
+
             mEnableFastScroller = a.getBoolean(R.styleable.RecyclerView_fastScrollEnabled, false);
             if (mEnableFastScroller) {
                 StateListDrawable verticalThumbDrawable = (StateListDrawable) a
@@ -724,6 +733,7 @@ public class RecyclerView extends ViewGroup implements ScrollingView, NestedScro
                         horizontalThumbDrawable, horizontalTrackDrawable);
             }
             a.recycle();
+
             createLayoutManager(context, layoutManagerName, attrs, defStyle, defStyleRes);
 
             if (Build.VERSION.SDK_INT >= 21) {
@@ -852,6 +862,9 @@ public class RecyclerView extends ViewGroup implements ScrollingView, NestedScro
         return RecyclerView.class.getPackage().getName() + '.' + className;
     }
 
+    /**
+     * 初始化 ChildHelper
+     */
     private void initChildrenHelper() {
         mChildHelper = new ChildHelper(new ChildHelper.Callback() {
             @Override
@@ -975,6 +988,9 @@ public class RecyclerView extends ViewGroup implements ScrollingView, NestedScro
         });
     }
 
+    /**
+     * 创建 AdapterHelper
+     */
     void initAdapterManager() {
         mAdapterHelper = new AdapterHelper(new AdapterHelper.Callback() {
             @Override
@@ -3337,10 +3353,12 @@ public class RecyclerView extends ViewGroup implements ScrollingView, NestedScro
 
     @Override
     protected void onMeasure(int widthSpec, int heightSpec) {
+        RLog.e("onMeasure mLayout = " + mLayout);
         if (mLayout == null) {
             defaultOnMeasure(widthSpec, heightSpec);
             return;
         }
+        RLog.e("onMeasure isAutoMeasureEnabled = " + mLayout.isAutoMeasureEnabled() + ", mAdapter=" + mAdapter);
         if (mLayout.isAutoMeasureEnabled()) {
             final int widthMode = MeasureSpec.getMode(widthSpec);
             final int heightMode = MeasureSpec.getMode(heightSpec);
@@ -13269,5 +13287,18 @@ public class RecyclerView extends ViewGroup implements ScrollingView, NestedScro
             mScrollingChildHelper = new NestedScrollingChildHelper(this);
         }
         return mScrollingChildHelper;
+    }
+
+    static class RLog {
+        static void i(String msg) {
+            if (DEBUG) {
+                Log.i(TAG, msg);
+            }
+        }
+        static void e(String msg) {
+            if (DEBUG) {
+                Log.e(TAG, msg);
+            }
+        }
     }
 }
