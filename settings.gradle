@@ -1,4 +1,4 @@
-include ':app', ':rxjava', ':lambda', ':binder_study', ':source_analysis', ':my_recyclerview',
+include ':app', ':rxjava', ':lambda', ':binder_study', ':source_analysis',':z_g_recyclerview',
         ':annotation', ':aspectj_test', ':aspectj_plugin',
         ':packer_source_apk',
         ':PackerDexShellTools', ':packer_parse_apk',

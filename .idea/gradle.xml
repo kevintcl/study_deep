@@ -17,13 +17,13 @@
             <option value="$PROJECT_DIR$/bugfix" />
             <option value="$PROJECT_DIR$/hook_ams" />
             <option value="$PROJECT_DIR$/lambda" />
-            <option value="$PROJECT_DIR$/my_recyclerview" />
             <option value="$PROJECT_DIR$/packer_parse_apk" />
             <option value="$PROJECT_DIR$/packer_source_apk" />
             <option value="$PROJECT_DIR$/proguard_demo" />
             <option value="$PROJECT_DIR$/rxjava" />
             <option value="$PROJECT_DIR$/source_analysis" />
             <option value="$PROJECT_DIR$/study_io" />
+            <option value="$PROJECT_DIR$/z_g_recyclerview" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
