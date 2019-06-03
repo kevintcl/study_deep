@@ -1,11 +1,7 @@
-package com.zeus.source.recyclerview;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+package com.zeus.source.recyclerview.mine.test;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -14,18 +10,22 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.zeus.source.recyclerview.R;
-import com.zeus.source.recyclerview.origin.DefaultItemAnimator;
-import com.zeus.source.recyclerview.origin.LinearLayoutManager;
-import com.zeus.source.recyclerview.origin.RecyclerView;
+import com.zeus.source.recyclerview.mine.Adapter;
+import com.zeus.source.recyclerview.mine.ViewHolder;
+import com.zeus.source.recyclerview.mine.ZLinearLayoutManager;
+import com.zeus.source.recyclerview.mine.ZRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerMainActivity extends AppCompatActivity {
+public class ZRecyclerViewTestActivity extends AppCompatActivity {
 
-    RecyclerView rv;
-    LinearLayoutManager linearLayoutManager;
+    ZRecyclerView rv;
+    ZLinearLayoutManager linearLayoutManager;
     MyAdapter adapter;
 
 
@@ -36,22 +36,10 @@ public class RecyclerMainActivity extends AppCompatActivity {
 
         rv = findViewById(R.id.rv);
 
-        linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        linearLayoutManager = new ZLinearLayoutManager(this);
+
 
         rv.setLayoutManager(linearLayoutManager);
-
-        //设置左上边距
-        rv.addItemDecoration(new RecyclerView.ItemDecoration() {
-            @Override
-            public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-                super.getItemOffsets(outRect, view, parent, state);
-                outRect.left = 4;
-                outRect.top = 4;
-            }
-        });
-        //设置item动画
-        rv.setItemAnimator(new DefaultItemAnimator());
 
         List<String> data = new ArrayList<>();
         for (int i = 0; i < 1; i++) {
@@ -60,11 +48,10 @@ public class RecyclerMainActivity extends AppCompatActivity {
         adapter = new MyAdapter(data);
 
         rv.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
 
     }
 
-    static class MyAdapter extends RecyclerView.Adapter<VH> {
+    static class MyAdapter extends Adapter<VH> {
 
         List<String> data;
 
@@ -104,7 +91,7 @@ public class RecyclerMainActivity extends AppCompatActivity {
         }
     }
 
-    static class VH extends RecyclerView.ViewHolder {
+    static class VH extends ViewHolder {
 
         TextView tv;
 
