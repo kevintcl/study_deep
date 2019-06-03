@@ -42,9 +42,9 @@ import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP;
 public class LinearLayoutManager extends RecyclerView.LayoutManager implements
         ItemTouchHelper.ViewDropHandler, RecyclerView.SmoothScroller.ScrollVectorProvider {
 
-    private static final String TAG = "LinearLayoutManager";
+    private static final String TAG = "kevint";//"LinearLayoutManager";
 
-    static final boolean DEBUG = false;
+    static final boolean DEBUG = true;
 
     public static final int HORIZONTAL = RecyclerView.HORIZONTAL;
 
@@ -467,16 +467,27 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
 
     /**
      * {@inheritDoc}
+     *
      */
     @Override
     public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
         // layout algorithm:
         // 1) by checking children and other variables, find an anchor coordinate and an anchor
         //  item position.
+        //mAnchor包含了子控件在Y轴上起始绘制偏移量（coordinate）,
+        // ItemView在Adapter中的索引位置(position)和布局方向(mLayoutFromEnd)
         // 2) fill towards start, stacking from bottom
         // 3) fill towards end, stacking from top
         // 4) scroll to fulfill requirements like stack from bottom.
         // create layout state
+
+        /**
+         * 1、确定锚点(Anchor)View, 设置好AnchorInfo
+         *
+         * 2、根据锚点View确定有多少布局空间mLayoutState.mAvailable可用
+         *
+         * 3、根据当前设置的LinearLayoutManager的方向开始摆放子View
+         */
         if (DEBUG) {
             Log.d(TAG, "is pre layout:" + state.isPreLayout());
         }
@@ -492,17 +503,31 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
 
         ensureLayoutState();
         mLayoutState.mRecycle = false;
-        // resolve layout direction
+        // resolve layout direction  设置布局方向(VERTICAL/HORIZONTAL)
         resolveShouldLayoutReverse();
 
         final View focused = getFocusedChild();
+
+        Log.e(TAG, "onLayoutChildren focused=" + focused
+                + ",mAnchorInfo.mValid=" + mAnchorInfo.mValid
+                + ",mPendingScrollPosition=" + mPendingScrollPosition
+                + ",mPendingSavedState=" + mPendingSavedState
+                + ",mShouldReverseLayout=" + mShouldReverseLayout
+                + ",mStackFromEnd=" + mStackFromEnd);
+
         if (!mAnchorInfo.mValid || mPendingScrollPosition != RecyclerView.NO_POSITION
                 || mPendingSavedState != null) {
             mAnchorInfo.reset();
+
+            // mStackFromEnd需要我们开发者主动调用，不然一直未false
+            // VERTICAL方向为mLayoutFromEnd为false HORIZONTAL方向是为true
             mAnchorInfo.mLayoutFromEnd = mShouldReverseLayout ^ mStackFromEnd;
+
             // calculate anchor position and coordinate
+            // // ====== 布局算法第 1 步 ======： 计算更新保存绘制锚点信息,找到锚点信息
             updateAnchorInfoForLayout(recycler, state, mAnchorInfo);
             mAnchorInfo.mValid = true;
+
         } else if (focused != null && (mOrientationHelper.getDecoratedStart(focused)
                         >= mOrientationHelper.getEndAfterPadding()
                 || mOrientationHelper.getDecoratedEnd(focused)
@@ -521,7 +546,7 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
             mAnchorInfo.assignFromViewAndKeepVisibleRect(focused, getPosition(focused));
         }
         if (DEBUG) {
-            Log.d(TAG, "Anchor info:" + mAnchorInfo);
+            Log.d(TAG, "Anchor info:" + mAnchorInfo.toString());
         }
 
         // LLM may decide to layout items for "extra" pixels to account for scrolling target,
@@ -529,6 +554,7 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
         int extraForStart;
         int extraForEnd;
         final int extra = getExtraLayoutSpace(state);
+
         // If the previous scroll delta was less than zero, the extra space should be laid out
         // at the start. Otherwise, it should be at the end.
         if (mLayoutState.mLastScrollDelta >= 0) {
@@ -540,6 +566,7 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
         }
         extraForStart += mOrientationHelper.getStartAfterPadding();
         extraForEnd += mOrientationHelper.getEndPadding();
+
         if (state.isPreLayout() && mPendingScrollPosition != RecyclerView.NO_POSITION
                 && mPendingScrollPositionOffset != INVALID_OFFSET) {
             // if the child is visible and we are going to move it around, we should layout
@@ -577,13 +604,28 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
         }
 
         onAnchorReady(recycler, state, mAnchorInfo, firstLayoutDirection);
+
+        // 在开始布局时，把所有的View都设置为 scrap 状态
+        /**
+         * 什么是scrap状态呢？
+         * ViewHolder被标记为FLAG_TMP_DETACHED状态，并且其itemview的parent被设置为null。
+         * detachAndScrapAttachedViews就是把所有的view保存到Recycler的mAttachedScrap集合中
+         *
+         * 会回收当前所有屏幕上的子View到Scarp中，虽然该方法很重要，但对于RecyclerViewr的第一次初始化，没有什么好回收的
+         */
         detachAndScrapAttachedViews(recycler);
+
         mLayoutState.mInfinite = resolveIsInfinite();
         mLayoutState.mIsPreLayout = state.isPreLayout();
+
         if (mAnchorInfo.mLayoutFromEnd) {
+            // HORIZONTAL方向时开始绘制
+
             // fill towards start
+            //  ====== 布局算法第 2 步 ======： fill towards start 锚点位置朝start方向填充ItemView
             updateLayoutStateToFillStart(mAnchorInfo);
             mLayoutState.mExtra = extraForStart;
+            // 填充第一次
             fill(recycler, mLayoutState, state, false);
             startOffset = mLayoutState.mOffset;
             final int firstElement = mLayoutState.mCurrentPosition;
@@ -591,9 +633,11 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
                 extraForEnd += mLayoutState.mAvailable;
             }
             // fill towards end
+            //  ====== 布局算法第 3 步 ======： fill towards end 锚点位置朝end方向填充ItemView
             updateLayoutStateToFillEnd(mAnchorInfo);
             mLayoutState.mExtra = extraForEnd;
             mLayoutState.mCurrentPosition += mLayoutState.mItemDirection;
+            // 填充第二次
             fill(recycler, mLayoutState, state, false);
             endOffset = mLayoutState.mOffset;
 
@@ -606,22 +650,37 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
                 startOffset = mLayoutState.mOffset;
             }
         } else {
+            // VERTICAL方向开始绘制
             // fill towards end
+            //确定AnchorView到RecyclerView的底部的布局可用空间
             updateLayoutStateToFillEnd(mAnchorInfo);
+
+            Log.i(TAG, "onLayoutChildren updateLayoutStateToFillEnd mLayoutState=" + mLayoutState.toString());
             mLayoutState.mExtra = extraForEnd;
+
+            //填充view, 从 AnchorView 到RecyclerView的底部
             fill(recycler, mLayoutState, state, false);
+
             endOffset = mLayoutState.mOffset;
             final int lastElement = mLayoutState.mCurrentPosition;
             if (mLayoutState.mAvailable > 0) {
                 extraForStart += mLayoutState.mAvailable;
             }
+
             // fill towards start
+            //确定AnchorView到RecyclerView的顶部的布局可用空间
             updateLayoutStateToFillStart(mAnchorInfo);
+            Log.i(TAG, "onLayoutChildren updateLayoutStateToFillStart mLayoutState=" + mLayoutState.toString());
+
             mLayoutState.mExtra = extraForStart;
             mLayoutState.mCurrentPosition += mLayoutState.mItemDirection;
+
+            //填充view,从 AnchorView 到RecyclerView的顶部
             fill(recycler, mLayoutState, state, false);
+
             startOffset = mLayoutState.mOffset;
 
+            Log.i(TAG, "onLayoutChildren mLayoutState="+mLayoutState);
             if (mLayoutState.mAvailable > 0) {
                 extraForEnd = mLayoutState.mAvailable;
                 // start could not consume all it should. add more items towards end
@@ -655,7 +714,9 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
                 endOffset += fixOffset;
             }
         }
+        //  ===布局算法第 4 步===： 计算滚动偏移量，如果有必要会在调用fill方法去填充新的ItemView
         layoutForPredictiveAnimations(recycler, state, startOffset, endOffset);
+
         if (!state.isPreLayout()) {
             mOrientationHelper.onLayoutComplete();
         } else {
@@ -767,6 +828,7 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
             Log.d(TAG, "deciding anchor info for fresh state");
         }
         anchorInfo.assignCoordinateFromPadding();
+
         anchorInfo.mPosition = mStackFromEnd ? state.getItemCount() - 1 : 0;
     }
 
@@ -789,9 +851,13 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
         if (mLastStackFromEnd != mStackFromEnd) {
             return false;
         }
+
+        //如果是从end(尾部)位置开始布局，那就找最接近end的那个位置的View作为锚点View
+        //如果是从start(头部)位置开始布局，那就找最接近start的那个位置的View作为锚点View
         View referenceChild = anchorInfo.mLayoutFromEnd
                 ? findReferenceChildClosestToEnd(recycler, state)
                 : findReferenceChildClosestToStart(recycler, state);
+
         if (referenceChild != null) {
             anchorInfo.assignFromView(referenceChild, getPosition(referenceChild));
             // If all visible views are removed in 1 pass, reference child might be out of bounds.
@@ -955,6 +1021,7 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
     }
 
     private void updateLayoutStateToFillEnd(int itemPosition, int offset) {
+        //mOrientationHelper.getEndAfterPadding() - offset 大致可以理解为RecyclerView的高度
         mLayoutState.mAvailable = mOrientationHelper.getEndAfterPadding() - offset;
         mLayoutState.mItemDirection = mShouldReverseLayout ? LayoutState.ITEM_DIRECTION_HEAD :
                 LayoutState.ITEM_DIRECTION_TAIL;
@@ -1040,6 +1107,7 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
      *                 start edge of the RecyclerView.
      * @see #setReverseLayout(boolean)
      * @see #scrollToPosition(int)
+     *
      */
     public void scrollToPositionWithOffset(int position, int offset) {
         mPendingScrollPosition = position;
@@ -1495,33 +1563,61 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
      * @param state           Context passed by the RecyclerView to control scroll steps.
      * @param stopOnFocusable If true, filling stops in the first focusable new child
      * @return Number of pixels that it added. Useful for scroll functions.
+     *   fill填充方法， 返回的是填充ItemView需要的像素，以便拿去做滚动
      */
     int fill(RecyclerView.Recycler recycler, LayoutState layoutState,
             RecyclerView.State state, boolean stopOnFocusable) {
+
+        // fill方法的任务是向RecyclerView中填充子View，终止条件为：
+        // 1). 没有空余的空间了
+        // 2). stopOnFocusable为true并且遇到了第一个focusable的子View
+
         // max offset we should set is mFastScroll + available
+        // 填充起始位置
         final int start = layoutState.mAvailable;
+
+        // 表示有滑动，先进行一次回收。
+        // 初始化时不会走这里面。
         if (layoutState.mScrollingOffset != LayoutState.SCROLLING_OFFSET_NaN) {
             // TODO ugly bug fix. should not happen
             if (layoutState.mAvailable < 0) {
                 layoutState.mScrollingOffset += layoutState.mAvailable;
             }
+            //如果有滚动就执行一次回收, 根据滚动的距离来回收View
+            // 回收子View
+            //(recycleViewsFromStart / recycleViewsFromEnd) -> recycleChildren -> removeAndRecycleViewAt
             recycleByLayoutState(recycler, layoutState);
         }
+        // 计算剩余可用的填充空间
+        //extra 是你设置的额外布局的范围, 这个一般不推荐设置
         int remainingSpace = layoutState.mAvailable + layoutState.mExtra;
+
+        // 用于记录每一次while循环的填充结果
         LayoutChunkResult layoutChunkResult = mLayoutChunkResult;
-        while ((layoutState.mInfinite || remainingSpace > 0) && layoutState.hasMore(state)) {
+
+        // 不断添加子View，直到结束
+        // 一般情况下，layoutState.mInfinite为false
+        while ((layoutState.mInfinite || remainingSpace > 0) && layoutState.hasMore(state)) {//有剩余空间的话，就一直添加 childView
+
             layoutChunkResult.resetInternal();
+
             if (RecyclerView.VERBOSE_TRACING) {
                 TraceCompat.beginSection("LLM LayoutChunk");
             }
+
+            // ====== 填充itemView核心填充方法 ====== 屏幕还有剩余可用空间并且还有数据就继续执行
+            //该方法大致流程如下：创建子View -> 将子View添加到RecyclerView中 -> 测量子View -> 对子View进行布局操作
             layoutChunk(recycler, state, layoutState, layoutChunkResult);
+
             if (RecyclerView.VERBOSE_TRACING) {
                 TraceCompat.endSection();
             }
             if (layoutChunkResult.mFinished) {
                 break;
             }
+            //// 一次 layoutChunk 消耗了多少空间
             layoutState.mOffset += layoutChunkResult.mConsumed * layoutState.mLayoutDirection;
+
             /**
              * Consume the available space if:
              * * layoutChunk did not request to be ignored
@@ -1535,6 +1631,8 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
                 remainingSpace -= layoutChunkResult.mConsumed;
             }
 
+            // 表示有滑动，又进行了一次回收。
+            // 初始化时不会走这里面，可以先跳过。
             if (layoutState.mScrollingOffset != LayoutState.SCROLLING_OFFSET_NaN) {
                 layoutState.mScrollingOffset += layoutChunkResult.mConsumed;
                 if (layoutState.mAvailable < 0) {
@@ -1542,6 +1640,7 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
                 }
                 recycleByLayoutState(recycler, layoutState);
             }
+            // 如果新添加的子View是focusable的且设置了stopOnFocusable为true，停止填充子view
             if (stopOnFocusable && layoutChunkResult.mFocusable) {
                 break;
             }
@@ -1549,12 +1648,33 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
         if (DEBUG) {
             validateChildOrder();
         }
+
+        // 填充完成后修改起始位置
         return start - layoutState.mAvailable;
     }
 
+    /**
+     * 创建、填充 、测量 、布局 一个ItemView
+     * @param recycler
+     * @param state
+     * @param layoutState
+     * @param result
+     */
     void layoutChunk(RecyclerView.Recycler recycler, RecyclerView.State state,
             LayoutState layoutState, LayoutChunkResult result) {
+
+        /**
+         * 1、从Recycler中获取一个View
+         *
+         * 2、添加到RecyclerView中
+         *
+         * 3、调整View的布局参数，调用其measure、layout方法。
+         *
+         * 该方法大致流程如下：创建子View -> 将子View添加到RecyclerView中 -> 测量子View -> 对子View进行布局操作
+         */
+        // ====== 第 1 步 ====== 从一二级缓存中获取或者是创建一个ItemView
         View view = layoutState.next(recycler);
+
         if (view == null) {
             if (DEBUG && layoutState.mScrapList == null) {
                 throw new RuntimeException("received null view when unexpected");
@@ -1564,10 +1684,13 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
             result.mFinished = true;
             return;
         }
+
+        // ====== 第 2 步 ====== 根据情况来添加ItemView，最终调用的还是ViewGroup的addView方法
         RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) view.getLayoutParams();
+        // 将子view添加到RecyclerView中
         if (layoutState.mScrapList == null) {
             if (mShouldReverseLayout == (layoutState.mLayoutDirection
-                    == LayoutState.LAYOUT_START)) {
+                    == LayoutState.LAYOUT_START)) {//根据布局方向，添加到不同的位置
                 addView(view);
             } else {
                 addView(view, 0);
@@ -1580,8 +1703,14 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
                 addDisappearingView(view, 0);
             }
         }
+
+        // ====== 第 3 步 ====== 测量一个ItemView的大小包含其margin值
+        // 测量子View
         measureChildWithMargins(view, 0, 0);
+
+        // 计算子view占用了多少空间，以便fill方法中计算剩余的空间
         result.mConsumed = mOrientationHelper.getDecoratedMeasurement(view);
+
         int left, top, right, bottom;
         if (mOrientation == VERTICAL) {
             if (isLayoutRTL()) {
@@ -1612,7 +1741,13 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
         }
         // We calculate everything with View's bounding box (which includes decor and margins)
         // To calculate correct layout position, we subtract margins.
+        // 根据得到的一个ItemView的left, top, right, bottom坐标值来确定其位置
+
+
+        // ====== 第 4 步 ====== 确定一个ItemView的位置
+        // 对子View进行layout过程
         layoutDecoratedWithMargins(view, left, top, right, bottom);
+
         if (DEBUG) {
             Log.d(TAG, "laid out child at position " + getPosition(view) + ", with l:"
                     + (left + params.leftMargin) + ", t:" + (top + params.topMargin) + ", r:"
@@ -2152,6 +2287,7 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
 
         /**
          * Number of pixels that we should fill, in the layout direction.
+         * 表示有多少空间可用来布局
          */
         int mAvailable;
 
@@ -2302,6 +2438,24 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
             Log.d(TAG, "avail:" + mAvailable + ", ind:" + mCurrentPosition + ", dir:"
                     + mItemDirection + ", offset:" + mOffset + ", layoutDir:" + mLayoutDirection);
         }
+
+        @Override
+        public String toString() {
+            return "LayoutState{" +
+                    "mRecycle=" + mRecycle +
+                    "\nmOffset=" + mOffset +
+                    "\nmAvailable=" + mAvailable +
+                    "\nmCurrentPosition=" + mCurrentPosition +
+                    "\nmItemDirection=" + mItemDirection +
+                    "\nmLayoutDirection=" + mLayoutDirection +
+                    "\nmScrollingOffset=" + mScrollingOffset +
+                    "\nmExtra=" + mExtra +
+                    "\nmIsPreLayout=" + mIsPreLayout +
+                    "\nmLastScrollDelta=" + mLastScrollDelta +
+                    "\nmScrapList=" + mScrapList +
+                    "\nmInfinite=" + mInfinite +
+                    '}';
+        }
     }
 
     /**
@@ -2371,9 +2525,17 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements
      */
     static class AnchorInfo {
         OrientationHelper mOrientationHelper;
+        /**
+         * 其实就是锚点View在adapter位置。
+         */
         int mPosition;
+        /**
+         * 锚点View的Y(X)坐标去掉RecyclerView的padding。
+         */
         int mCoordinate;
+
         boolean mLayoutFromEnd;
+
         boolean mValid;
 
         AnchorInfo() {

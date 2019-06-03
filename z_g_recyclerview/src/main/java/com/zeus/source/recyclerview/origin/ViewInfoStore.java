@@ -208,6 +208,12 @@ class ViewInfoStore {
     }
 
     void process(ProcessCallback callback) {
+        // 把Item View动画前的起始状态准备好
+        /**
+         * 这一步就是遍历mLayoutHolderMap对其中的每一个ViewHolder做对应的动画。
+         * 这里callback会调到了RecyclerView,
+         * RecyclerView会对每一个Item执行相应的动画: mViewInfoProcessCallback
+         */
         for (int index = mLayoutHolderMap.size() - 1; index >= 0; index--) {
             final RecyclerView.ViewHolder viewHolder = mLayoutHolderMap.keyAt(index);
             final InfoRecord record = mLayoutHolderMap.removeAt(index);
