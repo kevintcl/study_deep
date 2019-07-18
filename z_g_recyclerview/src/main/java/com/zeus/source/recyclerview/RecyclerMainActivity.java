@@ -2,6 +2,7 @@ package com.zeus.source.recyclerview;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -40,6 +41,7 @@ public class RecyclerMainActivity extends AppCompatActivity {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
         rv.setLayoutManager(linearLayoutManager);
+
 
         //设置左上边距
         rv.addItemDecoration(new RecyclerView.ItemDecoration() {
